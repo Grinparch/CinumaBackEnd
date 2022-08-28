@@ -12,5 +12,7 @@ import tfg.Cinuma.Modelo.Perfil;
  * @author jsnie
  */
 public interface PerfilRepository extends MongoRepository<Perfil, String>{
+    
+    Perfil findByPerfilId(String perfilId);
 
 }

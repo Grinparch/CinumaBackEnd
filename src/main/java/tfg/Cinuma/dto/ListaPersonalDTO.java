@@ -4,30 +4,28 @@
  */
 package tfg.Cinuma.dto;
 
-import org.bson.types.ObjectId;
-import tfg.Cinuma.Modelo.Elemento;
 
 /**
  *
  * @author jsnie
  */
 public class ListaPersonalDTO {
-    private ObjectId listaPersonalId;
+    private String listaPersonalId;
     ElementoDTO[] elementosVistos;
 
     public ListaPersonalDTO() {
     }
 
-    public ListaPersonalDTO(ObjectId listaPersonalId, ElementoDTO[] elementosVistos) {
+    public ListaPersonalDTO(String listaPersonalId, ElementoDTO[] elementosVistos) {
         this.listaPersonalId = listaPersonalId;
         this.elementosVistos = elementosVistos;
     }
 
-    public ObjectId getListaPersonalId() {
+    public String getListaPersonalId() {
         return listaPersonalId;
     }
 
-    public void setListaPersonalId(ObjectId listaPersonalId) {
+    public void setListaPersonalId(String listaPersonalId) {
         this.listaPersonalId = listaPersonalId;
     }
 

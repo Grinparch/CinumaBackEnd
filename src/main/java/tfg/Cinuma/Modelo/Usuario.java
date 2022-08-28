@@ -15,35 +15,55 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "Usuario")
 public class Usuario {
     @Id
-    private ObjectId userId;
+    private String userId;
     private String username;
     private String email;
     private String phone;
-    private Perfil perfil;
+    private Integer rol;
+    private String perfil;
     private Autenticacion autenticacion;
 
     
     public Usuario() {
     }
 
-    public Usuario(ObjectId userId, String username, String email, String phone) {
+    public Usuario(String userId, String username, String email, String phone) {
         this.userId = userId;
         this.username = username;
         this.email = email;
         this.phone = phone;
     }
 
-    public Usuario(ObjectId userId, String username, String email) {
+    public Usuario(String userId, String username, String email) {
         this.userId = userId;
         this.username = username;
         this.email = email;
     }
 
-    public ObjectId getUserId() {
+    public Usuario(String userId, String username, String email, String phone, String perfil, Autenticacion autenticacion) {
+        this.userId = userId;
+        this.username = username;
+        this.email = email;
+        this.phone = phone;
+        this.perfil = perfil;
+        this.autenticacion = autenticacion;
+    }
+
+    public Usuario(String userId, String username, String email, String phone, Integer rol, String perfil, Autenticacion autenticacion) {
+        this.userId = userId;
+        this.username = username;
+        this.email = email;
+        this.phone = phone;
+        this.rol = rol;
+        this.perfil = perfil;
+        this.autenticacion = autenticacion;
+    }
+
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(ObjectId userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
@@ -71,11 +91,11 @@ public class Usuario {
         this.phone = phone;
     }
     
-    public Perfil getPerfil() {
+    public String getPerfil() {
         return perfil;
     }
 
-    public void setPerfil(Perfil perfil) {
+    public void setPerfil(String perfil) {
         this.perfil = perfil;
     }
 
@@ -85,6 +105,14 @@ public class Usuario {
 
     public void setAutenticacion(Autenticacion autenticacion) {
         this.autenticacion = autenticacion;
+    }
+
+    public Integer getRol() {
+        return rol;
+    }
+
+    public void setRol(Integer rol) {
+        this.rol = rol;
     }
 
 

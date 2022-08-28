@@ -32,4 +32,9 @@ public class ImplementacionElementoService implements ElementoServicio{
         return elementoRepository.save(elemento);
     }
     
+    @Override
+    public void deleteElementoByElementoId(String elementoId) {
+        elementoRepository.deleteElementoByElementoId(elementoId);
+    }
+    
 }

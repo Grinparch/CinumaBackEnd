@@ -31,5 +31,10 @@ public class ImplementacionAutenticacionService implements AutenticacionServicio
     public Autenticacion saveOrUpdateAutenticacion(Autenticacion autenticacion) {
         return autenticacionRepository.save(autenticacion);
     }
+
+    @Override
+    public Autenticacion findByUsuario(String usuario) {
+        return autenticacionRepository.findByUsuario(usuario);
+    }
     
 }

@@ -4,14 +4,13 @@
  */
 package tfg.Cinuma.dto;
 
-import org.bson.types.ObjectId;
 
 /**
  *
  * @author jsnie
  */
 public class ListaDTO {
-    private ObjectId listaId;
+    private String listaId;
     private ElementoDTO[] elementos;
     private String creador;
     private Integer votos;
@@ -19,24 +18,24 @@ public class ListaDTO {
     public ListaDTO() {
     }
 
-    public ListaDTO(ObjectId listaId, ElementoDTO[] elementos, String creador) {
+    public ListaDTO(String listaId, ElementoDTO[] elementos, String creador) {
         this.listaId = listaId;
         this.elementos = elementos;
         this.creador = creador;
     }
 
-    public ListaDTO(ObjectId listaId, ElementoDTO[] elementos, String creador, Integer votos) {
+    public ListaDTO(String listaId, ElementoDTO[] elementos, String creador, Integer votos) {
         this.listaId = listaId;
         this.elementos = elementos;
         this.creador = creador;
         this.votos = votos;
     }
 
-    public ObjectId getListaId() {
+    public String getListaId() {
         return listaId;
     }
 
-    public void setListaId(ObjectId listaId) {
+    public void setListaId(String listaId) {
         this.listaId = listaId;
     }
 

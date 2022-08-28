@@ -15,22 +15,22 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "ListaPersonal")
 public class ListaPersonal {
     @Id
-    private ObjectId listaPersonalId;
+    private String listaPersonalId;
     Elemento[] elementosVistos;
 
     public ListaPersonal() {
     }
 
-    public ListaPersonal(ObjectId listaPersonalId, Elemento[] elementosVistos) {
+    public ListaPersonal(String listaPersonalId, Elemento[] elementosVistos) {
         this.listaPersonalId = listaPersonalId;
         this.elementosVistos = elementosVistos;
     }
 
-    public ObjectId getListaPersonalId() {
+    public String getListaPersonalId() {
         return listaPersonalId;
     }
 
-    public void setListaPersonalId(ObjectId listaPersonalId) {
+    public void setListaPersonalId(String listaPersonalId) {
         this.listaPersonalId = listaPersonalId;
     }
 

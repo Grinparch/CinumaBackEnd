@@ -16,20 +16,20 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "Articulo")
 public class Articulo {
     @Id
-    private ObjectId articuloId;
+    private String articuloId;
     private String titulo;
     private String contenido;
     private String tema;
     private String autor;
     private Date fechaCreacion;
     private String[] generosAsociados;
-    private Elemento[] titulosAsociados;
+    private ObjectId[] titulosAsociados;
 
     public Articulo() {
     }
 
-    public Articulo(ObjectId articuloId, String titulo, String contenido, String tema, 
-            String autor, Date fechaCreacion, String[] generosAsociados, Elemento[] titulosAsociados) {
+    public Articulo(String articuloId, String titulo, String contenido, String tema, 
+            String autor, Date fechaCreacion, String[] generosAsociados, ObjectId[] titulosAsociados) {
         this.articuloId = articuloId;
         this.titulo = titulo;
         this.contenido = contenido;
@@ -88,19 +88,19 @@ public class Articulo {
         this.generosAsociados = generosAsociados;
     }
 
-    public Elemento[] getTitulosAsociados() {
+    public ObjectId[] getTitulosAsociados() {
         return titulosAsociados;
     }
 
-    public void setTitulosAsociados(Elemento[] titulosAsociados) {
+    public void setTitulosAsociados(ObjectId[] titulosAsociados) {
         this.titulosAsociados = titulosAsociados;
     }
 
-    public ObjectId getArticuloId() {
+    public String getArticuloId() {
         return articuloId;
     }
 
-    public void setArticuloId(ObjectId articuloId) {
+    public void setArticuloId(String articuloId) {
         this.articuloId = articuloId;
     }
 

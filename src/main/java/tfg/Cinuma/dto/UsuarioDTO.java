@@ -4,40 +4,60 @@
  */
 package tfg.Cinuma.dto;
 
-import org.bson.types.ObjectId;
 
 /**
  *
  * @author jsnie
  */
 public class UsuarioDTO {
-    private ObjectId userId;
+    private String userId;
     private String username;
     private String email;
     private String phone;
-    // Poner perfil
+    private Integer rol;
+    private String perfil;
+    private AutenticacionDTO autenticacion;
 
     public UsuarioDTO() {
     }
     
-    public UsuarioDTO(ObjectId userId, String username, String email, String phone) {
+    public UsuarioDTO(String userId, String username, String email, String phone) {
         this.userId = userId;
         this.username = username;
         this.email = email;
         this.phone = phone;
     }
 
-    public UsuarioDTO(ObjectId userId, String username, String email) {
+    public UsuarioDTO(String userId, String username, String email) {
         this.userId = userId;
         this.username = username;
         this.email = email;
     }
 
-    public ObjectId getUserId() {
+    public UsuarioDTO(String userId, String username, String email, String phone, String perfil, AutenticacionDTO autenticacion) {
+        this.userId = userId;
+        this.username = username;
+        this.email = email;
+        this.phone = phone;
+        this.perfil = perfil;
+        this.autenticacion = autenticacion;
+    }
+
+    public UsuarioDTO(String userId, String username, String email, String phone, Integer rol, String perfil, AutenticacionDTO autenticacion) {
+        this.userId = userId;
+        this.username = username;
+        this.email = email;
+        this.phone = phone;
+        this.rol = rol;
+        this.perfil = perfil;
+        this.autenticacion = autenticacion;
+    }
+
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(ObjectId userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
@@ -63,6 +83,30 @@ public class UsuarioDTO {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getPerfil() {
+        return perfil;
+    }
+
+    public void setPerfil(String perfil) {
+        this.perfil = perfil;
+    }
+
+    public AutenticacionDTO getAutenticacion() {
+        return autenticacion;
+    }
+
+    public void setAutenticacion(AutenticacionDTO autenticacion) {
+        this.autenticacion = autenticacion;
+    }
+
+    public Integer getRol() {
+        return rol;
+    }
+
+    public void setRol(Integer rol) {
+        this.rol = rol;
     }
 
 }

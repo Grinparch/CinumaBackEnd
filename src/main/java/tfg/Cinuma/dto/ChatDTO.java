@@ -4,24 +4,22 @@
  */
 package tfg.Cinuma.dto;
 
-import org.bson.types.ObjectId;
-import tfg.Cinuma.Modelo.Usuario;
 
 /**
  *
  * @author jsnie
  */
 public class ChatDTO {
-    private ObjectId chatId;
+    private String chatId;
     private String mensaje;
-    private UsuarioDTO[] miembros;
+    private String[] miembros;
     private String[] generos;
     private String[] tags;
 
     public ChatDTO() {
     }
 
-    public ChatDTO(ObjectId chatId, String mensaje, UsuarioDTO[] miembros, String[] generos, String[] tags) {
+    public ChatDTO(String chatId, String mensaje, String[] miembros, String[] generos, String[] tags) {
         this.chatId = chatId;
         this.mensaje = mensaje;
         this.miembros = miembros;
@@ -29,11 +27,11 @@ public class ChatDTO {
         this.tags = tags;
     }
 
-    public ObjectId getChatId() {
+    public String getChatId() {
         return chatId;
     }
 
-    public void setChatId(ObjectId chatId) {
+    public void setChatId(String chatId) {
         this.chatId = chatId;
     }
 
@@ -45,11 +43,11 @@ public class ChatDTO {
         this.mensaje = mensaje;
     }
 
-    public UsuarioDTO[] getMiembros() {
+    public String[] getMiembros() {
         return miembros;
     }
 
-    public void setMiembros(UsuarioDTO[] miembros) {
+    public void setMiembros(String[] miembros) {
         this.miembros = miembros;
     }
 

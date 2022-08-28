@@ -15,4 +15,6 @@ public interface PerfilServicio {
     List<Perfil> findAll();
     
     Perfil saveOrUpdatePerfil(Perfil perfil);
+    
+    Perfil findByPerfilId(String perfilId);
 }

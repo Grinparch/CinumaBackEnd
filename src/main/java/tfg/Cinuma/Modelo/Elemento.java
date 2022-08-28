@@ -16,7 +16,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "Elemento")
 public class Elemento {
     @Id
-    private ObjectId elementoId;
+    private String elementoId;
     private String titulo;
     private Float calificacionPromedio;
     private Float calificacionPersonal;
@@ -31,7 +31,7 @@ public class Elemento {
     private Date estreno;
     private Date estrenoTaquilla;
 
-    public Elemento(ObjectId elementoId, String titulo, Float calificacionPromedio, Float calificacionPersonal, Float duracion, String[] genero, String idioma, String director, String[] actores, String opinion, Integer tipo) {
+    public Elemento(String elementoId, String titulo, Float calificacionPromedio, Float calificacionPersonal, Float duracion, String[] genero, String idioma, String director, String[] actores, String opinion, Integer tipo) {
         this.elementoId = elementoId;
         this.titulo = titulo;
         this.calificacionPromedio = calificacionPromedio;
@@ -45,7 +45,7 @@ public class Elemento {
         this.tipo = tipo;
     }
 
-    private Elemento(ObjectId elementoId, String titulo, Float calificacionPromedio, 
+    private Elemento(String elementoId, String titulo, Float calificacionPromedio, 
             Float calificacionPersonal, Float duracion, String[] genero, String idioma, 
             String director, String[] actores, String opinion, Integer tipo,
             Integer capitulos, Date estreno) {
@@ -64,7 +64,7 @@ public class Elemento {
         this.estreno = estreno;
     }
 
-    private Elemento(ObjectId elementoId, String titulo, Float calificacionPromedio, 
+    private Elemento(String elementoId, String titulo, Float calificacionPromedio, 
             Float calificacionPersonal, Float duracion, String[] genero, String idioma, 
             String director, String[] actores, String opinion, Integer tipo, Date estrenoTaquilla) {
         this.elementoId = elementoId;
@@ -81,7 +81,7 @@ public class Elemento {
         this.estrenoTaquilla = estrenoTaquilla;
     }
     
-    public Elemento createPelicula(ObjectId elementoId, String titulo, Float calificacionPromedio, 
+    public Elemento createPelicula(String elementoId, String titulo, Float calificacionPromedio, 
             Float calificacionPersonal, Float duracion, String[] genero, String idioma, 
             String director, String[] actores, String opinion, Integer tipo, Date estrenoTaquilla){
         
@@ -89,7 +89,7 @@ public class Elemento {
                 genero, idioma, director, actores, opinion, tipo, estrenoTaquilla);
     }
     
-    public Elemento createSerie(ObjectId elementoId, String titulo, Float calificacionPromedio, 
+    public Elemento createSerie(String elementoId, String titulo, Float calificacionPromedio, 
             Float calificacionPersonal, Float duracion, String[] genero, String idioma, 
             String director, String[] actores, String opinion, Integer tipo, Integer capitulos, Date estreno){
         
@@ -100,11 +100,11 @@ public class Elemento {
     public Elemento() {
     }
 
-    public ObjectId getElementoId() {
+    public String getElementoId() {
         return elementoId;
     }
 
-    public void setElementoId(ObjectId elementoId) {
+    public void setElementoId(String elementoId) {
         this.elementoId = elementoId;
     }
 

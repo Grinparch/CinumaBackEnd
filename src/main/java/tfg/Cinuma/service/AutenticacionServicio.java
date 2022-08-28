@@ -6,7 +6,6 @@ package tfg.Cinuma.service;
 
 import java.util.List;
 import tfg.Cinuma.Modelo.Autenticacion;
-import tfg.Cinuma.Modelo.Chat;
 
 /**
  *
@@ -14,6 +13,8 @@ import tfg.Cinuma.Modelo.Chat;
  */
 public interface AutenticacionServicio {
     List<Autenticacion> findAll();
+    
+    Autenticacion findByUsuario(String usuario);
     
     Autenticacion saveOrUpdateAutenticacion(Autenticacion autenticacion);
 }

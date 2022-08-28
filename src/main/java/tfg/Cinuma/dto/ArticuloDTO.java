@@ -5,7 +5,6 @@
 package tfg.Cinuma.dto;
 
 import java.util.Date;
-import org.bson.types.ObjectId;
 import tfg.Cinuma.Modelo.Elemento;
 
 /**
@@ -13,20 +12,20 @@ import tfg.Cinuma.Modelo.Elemento;
  * @author jsnie
  */
 public class ArticuloDTO {
-    private ObjectId articuloId;
+    private String articuloId;
     private String titulo;
     private String contenido;
     private String tema;
     private String autor;
     private Date fechaCreacion;
     private String[] generosAsociados;
-    private ElementoDTO[] titulosAsociados;
+    private String[] titulosAsociados;
 
     public ArticuloDTO() {
     }
 
-    public ArticuloDTO(ObjectId articuloId, String titulo, String contenido, String tema, 
-            String autor, Date fechaCreacion, String[] generosAsociados, ElementoDTO[] titulosAsociados) {
+    public ArticuloDTO(String articuloId, String titulo, String contenido, String tema, 
+            String autor, Date fechaCreacion, String[] generosAsociados, String[] titulosAsociados) {
         this.articuloId = articuloId;
         this.titulo = titulo;
         this.contenido = contenido;
@@ -85,19 +84,19 @@ public class ArticuloDTO {
         this.generosAsociados = generosAsociados;
     }
 
-    public ElementoDTO[] getTitulosAsociados() {
+    public String[] getTitulosAsociados() {
         return titulosAsociados;
     }
 
-    public void setTitulosAsociados(ElementoDTO[] titulosAsociados) {
+    public void setTitulosAsociados(String[] titulosAsociados) {
         this.titulosAsociados = titulosAsociados;
     }
 
-    public ObjectId getArticuloId() {
+    public String getArticuloId() {
         return articuloId;
     }
 
-    public void setArticuloId(ObjectId articuloId) {
+    public void setArticuloId(String articuloId) {
         this.articuloId = articuloId;
     }
 }

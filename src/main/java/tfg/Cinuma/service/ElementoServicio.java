@@ -6,7 +6,6 @@ package tfg.Cinuma.service;
 
 import java.util.List;
 import tfg.Cinuma.Modelo.Elemento;
-import tfg.Cinuma.Modelo.Grupo;
 
 /**
  *
@@ -16,4 +15,6 @@ public interface ElementoServicio {
     List<Elemento> findAll();
     
     Elemento saveOrUpdateElemento(Elemento elemento);
+    
+    void deleteElementoByElementoId(String elementoId);
 }

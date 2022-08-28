@@ -16,10 +16,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import tfg.Cinuma.Modelo.Autenticacion;
 import tfg.Cinuma.Modelo.Chat;
+import tfg.Cinuma.Modelo.Usuario;
 import tfg.Cinuma.dto.AutenticacionDTO;
 import tfg.Cinuma.dto.ChatDTO;
+import tfg.Cinuma.dto.UsuarioDTO;
 import tfg.Cinuma.service.AutenticacionServicio;
 import tfg.Cinuma.service.ChatServicio;
+import tfg.Cinuma.service.UsuarioServicio;
 import tfg.Cinuma.util.ObjectMapperUtils;
 
 /**
@@ -32,18 +35,34 @@ public class AutenticacionControlador {
     
     @Autowired
     private AutenticacionServicio autenticacionServicio;
+    @Autowired
+    private UsuarioServicio usuarioServicio;
     
     
-    @CrossOrigin(origins = "http://localhost:8100")
     @GetMapping(value = "/")
     public List<AutenticacionDTO> obtenerTodasLasAutenticaciones() {
         return ObjectMapperUtils.mapAll(autenticacionServicio.findAll(), AutenticacionDTO.class);
     }
     
-    @CrossOrigin(origins = "http://localhost:8100")
+    @PostMapping(value = "/login")
+    public ResponseEntity<?> verificarUsuarioYClaveCorrectas(@RequestBody AutenticacionDTO autenticacionDTO) {
+        Autenticacion authExistente = ObjectMapperUtils.map(autenticacionServicio.findByUsuario(autenticacionDTO.getUsuario()), Autenticacion.class);
+        if(authExistente.getClave().equals(autenticacionDTO.getClave())){
+            Usuario usuarioExistente = ObjectMapperUtils.map(usuarioServicio.findByUsername(autenticacionDTO.getUsuario()), Usuario.class);
+            usuarioExistente.getAutenticacion().setClave(null);
+            return new ResponseEntity(usuarioExistente, HttpStatus.OK);
+        }
+        return new ResponseEntity("Usuario y/o contraseña no validos", HttpStatus.BAD_REQUEST);
+    }
+    
     @PostMapping(value = "/add")
     public ResponseEntity<?> agregarAutenticacion(@RequestBody AutenticacionDTO autenticacionDTO) {
-        autenticacionServicio.saveOrUpdateAutenticacion(ObjectMapperUtils.map(autenticacionDTO, Autenticacion.class));
-        return new ResponseEntity("Autenticacion agregada exitosamenta", HttpStatus.OK);
+        Autenticacion authExistente = autenticacionServicio.findByUsuario(autenticacionDTO.getUsuario());
+        if(authExistente == null){
+            Autenticacion newauth = autenticacionServicio.saveOrUpdateAutenticacion(ObjectMapperUtils.map(autenticacionDTO, Autenticacion.class));
+            return new ResponseEntity(newauth, HttpStatus.OK);
+        }else{
+            return new ResponseEntity("Usuario ya existe", HttpStatus.BAD_REQUEST);
+        }
     }
 }

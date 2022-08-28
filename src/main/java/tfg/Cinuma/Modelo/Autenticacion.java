@@ -15,24 +15,24 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "Autenticacion")
 public class Autenticacion {
     @Id
-    private ObjectId autenticacionId;
+    private String autenticacionId;
     private String usuario;
     private String clave;
 
     public Autenticacion() {
     }
 
-    public Autenticacion(ObjectId autenticacionId, String usuario, String clave) {
+    public Autenticacion(String autenticacionId, String usuario, String clave) {
         this.autenticacionId = autenticacionId;
         this.usuario = usuario;
         this.clave = clave;
     }
 
-    public ObjectId getAutenticacionId() {
+    public String getAutenticacionId() {
         return autenticacionId;
     }
 
-    public void setAutenticacionId(ObjectId autenticacionId) {
+    public void setAutenticacionId(String autenticacionId) {
         this.autenticacionId = autenticacionId;
     }
 

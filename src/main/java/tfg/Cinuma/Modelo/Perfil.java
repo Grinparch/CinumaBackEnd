@@ -15,8 +15,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "Perfil")
 public class Perfil {
     @Id
-    private ObjectId perfilId;
-    private Elemento vistoUltimamente;
+    private String perfilId;
+    private String vistoUltimamente;
     private String generoPreferido;
     private Float puntuacionPromedio;
     private String[] actoresPreferidos;
@@ -26,7 +26,7 @@ public class Perfil {
     private ListaPersonal listaPersonal;
     private Lista listasCreadas;
 
-    public Perfil(ObjectId perfilId, Elemento vistoUltimamente, String generoPreferido, Float puntuacionPromedio, 
+    public Perfil(String perfilId, String vistoUltimamente, String generoPreferido, Float puntuacionPromedio, 
             String[] actoresPreferidos, String[] vinculosAsociados, Boolean disponibleChat, String avatar, 
             ListaPersonal listaPersonal, Lista listasCreadas) {
         this.perfilId = perfilId;
@@ -41,22 +41,31 @@ public class Perfil {
         this.listasCreadas = listasCreadas;
     }
 
+    public Perfil(String perfilId, Boolean disponibleChat, ListaPersonal listaPersonal) {
+        String[] listaVacia = new String[0];
+        this.perfilId = perfilId;
+        this.actoresPreferidos = listaVacia;
+        this.vinculosAsociados = listaVacia;
+        this.disponibleChat = disponibleChat;
+        this.listaPersonal = listaPersonal;
+    }
+
     public Perfil() {
     }
 
-    public ObjectId getPerfilId() {
+    public String getPerfilId() {
         return perfilId;
     }
 
-    public void setPerfilId(ObjectId perfilId) {
+    public void setPerfilId(String perfilId) {
         this.perfilId = perfilId;
     }
 
-    public Elemento getVistoUltimamente() {
+    public String getVistoUltimamente() {
         return vistoUltimamente;
     }
 
-    public void setVistoUltimamente(Elemento vistoUltimamente) {
+    public void setVistoUltimamente(String vistoUltimamente) {
         this.vistoUltimamente = vistoUltimamente;
     }
 

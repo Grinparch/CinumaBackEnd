@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,9 +42,39 @@ public class ElementoControlador {
     }
     
     @CrossOrigin(origins = "http://localhost:8100")
-    @PostMapping(value = "/add")
-    public ResponseEntity<?> agregarElemento(@RequestBody ElementoDTO elementoDTO) {
+    @PostMapping(value = "/addPelicula")
+    public ResponseEntity<?> agregarPelicula(@RequestBody ElementoDTO elementoDTO) {
+        System.out.println(elementoDTO.getEstrenoTaquilla());
         elementoServicio.saveOrUpdateElemento(ObjectMapperUtils.map(elementoDTO, Elemento.class));
-        return new ResponseEntity("Elemento agregado exitosamente", HttpStatus.OK);
+        return new ResponseEntity("Pelicula agregada exitosamente", HttpStatus.OK);
+    }
+    
+    @CrossOrigin(origins = "http://localhost:8100")
+    @PostMapping(value = "/addSerie")
+    public ResponseEntity<?> agregarSerie(@RequestBody ElementoDTO elementoDTO) {
+        elementoServicio.saveOrUpdateElemento(ObjectMapperUtils.map(elementoDTO, Elemento.class));
+        return new ResponseEntity("Serie agregada exitosamente", HttpStatus.OK);
+    }
+    
+    @CrossOrigin(origins = "http://localhost:8100")
+    @DeleteMapping(value = "/delete/{elementoId}")
+    public ResponseEntity<?> deleteElementoByElementoId(@PathVariable String elementoId) {
+        elementoServicio.deleteElementoByElementoId(elementoId);
+        return new ResponseEntity("Elemento borrado exitosamente", HttpStatus.OK);
+    }
+    
+    @CrossOrigin(origins = "http://localhost:8100")
+    @PostMapping(value = "/editarPelicula")
+    public ResponseEntity<?> editarPelicula(@RequestBody ElementoDTO elementoDTO) {
+        System.out.println(elementoDTO.getEstrenoTaquilla());
+        elementoServicio.saveOrUpdateElemento(ObjectMapperUtils.map(elementoDTO, Elemento.class));
+        return new ResponseEntity("Pelicula Editada exitosamente", HttpStatus.OK);
+    }
+    
+    @CrossOrigin(origins = "http://localhost:8100")
+    @PostMapping(value = "/editarSerie")
+    public ResponseEntity<?> editarSerie(@RequestBody ElementoDTO elementoDTO) {
+        elementoServicio.saveOrUpdateElemento(ObjectMapperUtils.map(elementoDTO, Elemento.class));
+        return new ResponseEntity("Serie Editada exitosamente", HttpStatus.OK);
     }
 }

@@ -4,24 +4,23 @@
  */
 package tfg.Cinuma.dto;
 
-import org.bson.types.ObjectId;
 
 /**
  *
  * @author jsnie
  */
 public class GrupoDTO {
-    private ObjectId grupoId;
+    private String grupoId;
     private String nombre;
-    private ElementoDTO[] elementosPreferidos;
+    private String[] elementosPreferidos;
     private String[][] elementosSinAprobar;
-    private String miembros;
+    private String[] miembros;
     private String descripcion;
 
     public GrupoDTO() {
     }
 
-    public GrupoDTO(ObjectId grupoId, String nombre, ElementoDTO[] elementosPreferidos, String[][] elementosSinAprobar, String miembros, String descripcion) {
+    public GrupoDTO(String grupoId, String nombre, String[] elementosPreferidos, String[][] elementosSinAprobar, String[] miembros, String descripcion) {
         this.grupoId = grupoId;
         this.nombre = nombre;
         this.elementosPreferidos = elementosPreferidos;
@@ -30,7 +29,7 @@ public class GrupoDTO {
         this.descripcion = descripcion;
     }
 
-    public GrupoDTO(ObjectId grupoId, String nombre, ElementoDTO[] elementosPreferidos, String miembros, String descripcion) {
+    public GrupoDTO(String grupoId, String nombre, String[] elementosPreferidos, String[] miembros, String descripcion) {
         this.grupoId = grupoId;
         this.nombre = nombre;
         this.elementosPreferidos = elementosPreferidos;
@@ -38,11 +37,11 @@ public class GrupoDTO {
         this.descripcion = descripcion;
     }
 
-    public ObjectId getGrupoId() {
+    public String getGrupoId() {
         return grupoId;
     }
 
-    public void setGrupoId(ObjectId grupoId) {
+    public void setGrupoId(String grupoId) {
         this.grupoId = grupoId;
     }
 
@@ -54,11 +53,11 @@ public class GrupoDTO {
         this.nombre = nombre;
     }
 
-    public ElementoDTO[] getElementosPreferidos() {
+    public String[] getElementosPreferidos() {
         return elementosPreferidos;
     }
 
-    public void setElementosPreferidos(ElementoDTO[] elementosPreferidos) {
+    public void setElementosPreferidos(String[] elementosPreferidos) {
         this.elementosPreferidos = elementosPreferidos;
     }
 
@@ -70,11 +69,11 @@ public class GrupoDTO {
         this.elementosSinAprobar = elementosSinAprobar;
     }
 
-    public String getMiembros() {
+    public String[] getMiembros() {
         return miembros;
     }
 
-    public void setMiembros(String miembros) {
+    public void setMiembros(String[] miembros) {
         this.miembros = miembros;
     }
 

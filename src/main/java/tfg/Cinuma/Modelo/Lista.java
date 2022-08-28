@@ -15,7 +15,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "Lista")
 public class Lista {
     @Id
-    private ObjectId listaId;
+    private String listaId;
     private Elemento[] elementos;
     private String creador;
     private Integer votos;
@@ -23,24 +23,24 @@ public class Lista {
     public Lista() {
     }
 
-    public Lista(ObjectId listaId, Elemento[] elementos, String creador) {
+    public Lista(String listaId, Elemento[] elementos, String creador) {
         this.listaId = listaId;
         this.elementos = elementos;
         this.creador = creador;
     }
 
-    public Lista(ObjectId listaId, Elemento[] elementos, String creador, Integer votos) {
+    public Lista(String listaId, Elemento[] elementos, String creador, Integer votos) {
         this.listaId = listaId;
         this.elementos = elementos;
         this.creador = creador;
         this.votos = votos;
     }
 
-    public ObjectId getListaId() {
+    public String getListaId() {
         return listaId;
     }
 
-    public void setListaId(ObjectId listaId) {
+    public void setListaId(String listaId) {
         this.listaId = listaId;
     }
 

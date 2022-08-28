@@ -4,31 +4,30 @@
  */
 package tfg.Cinuma.dto;
 
-import org.bson.types.ObjectId;
 
 /**
  *
  * @author jsnie
  */
 public class AutenticacionDTO {
-    private ObjectId autenticacionId;
+    private String autenticacionId;
     private String usuario;
     private String clave;
 
     public AutenticacionDTO() {
     }
 
-    public AutenticacionDTO(ObjectId autenticacionId, String usuario, String clave) {
+    public AutenticacionDTO(String autenticacionId, String usuario, String clave) {
         this.autenticacionId = autenticacionId;
         this.usuario = usuario;
         this.clave = clave;
     }
 
-    public ObjectId getAutenticacionId() {
+    public String getAutenticacionId() {
         return autenticacionId;
     }
 
-    public void setAutenticacionId(ObjectId autenticacionId) {
+    public void setAutenticacionId(String autenticacionId) {
         this.autenticacionId = autenticacionId;
     }
 

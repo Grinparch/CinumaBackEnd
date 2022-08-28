@@ -32,4 +32,9 @@ public class ImplementacionPerfilServicio implements PerfilServicio{
         return perfilRepository.save(perfil);
     }
     
+    @Override
+    public Perfil findByPerfilId(String username) {
+        return perfilRepository.findByPerfilId(username);
+    }
+    
 }

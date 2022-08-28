@@ -15,16 +15,16 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "Chat")
 public class Chat {
     @Id
-    private ObjectId chatId;
+    private String chatId;
     private String mensaje;
-    private Usuario[] miembros;
+    private String[] miembros;
     private String[] generos;
     private String[] tags;
 
     public Chat() {
     }
 
-    public Chat(ObjectId chatId, String mensaje, Usuario[] miembros, String[] generos, String[] tags) {
+    public Chat(String chatId, String mensaje, String[] miembros, String[] generos, String[] tags) {
         this.chatId = chatId;
         this.mensaje = mensaje;
         this.miembros = miembros;
@@ -32,11 +32,11 @@ public class Chat {
         this.tags = tags;
     }
 
-    public ObjectId getChatId() {
+    public String getChatId() {
         return chatId;
     }
 
-    public void setChatId(ObjectId chatId) {
+    public void setChatId(String chatId) {
         this.chatId = chatId;
     }
 
@@ -48,11 +48,11 @@ public class Chat {
         this.mensaje = mensaje;
     }
 
-    public Usuario[] getMiembros() {
+    public String[] getMiembros() {
         return miembros;
     }
 
-    public void setMiembros(Usuario[] miembros) {
+    public void setMiembros(String[] miembros) {
         this.miembros = miembros;
     }
 

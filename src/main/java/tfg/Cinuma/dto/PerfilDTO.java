@@ -4,15 +4,14 @@
  */
 package tfg.Cinuma.dto;
 
-import org.bson.types.ObjectId;
 
 /**
  *
  * @author jsnie
  */
 public class PerfilDTO {
-    private ObjectId perfilId;
-    private ElementoDTO vistoUltimamente;
+    private String perfilId;
+    private String vistoUltimamente;
     private String generoPreferido;
     private Float puntuacionPromedio;
     private String[] actoresPreferidos;
@@ -22,7 +21,7 @@ public class PerfilDTO {
     private ListaPersonalDTO listaPersonal;
     private ListaDTO listasCreadas;
 
-    public PerfilDTO(ObjectId perfilId, ElementoDTO vistoUltimamente, String generoPreferido, Float puntuacionPromedio, 
+    public PerfilDTO(String perfilId, String vistoUltimamente, String generoPreferido, Float puntuacionPromedio, 
             String[] actoresPreferidos, String[] vinculosAsociados, Boolean disponibleChat, String avatar, 
             ListaPersonalDTO listaPersonal, ListaDTO listasCreadas) {
         this.perfilId = perfilId;
@@ -37,22 +36,31 @@ public class PerfilDTO {
         this.listasCreadas = listasCreadas;
     }
 
+    public PerfilDTO(String perfilId, Boolean disponibleChat, ListaPersonalDTO listaPersonal) {
+        String[] listaVacia = new String[0];
+        this.perfilId = perfilId;
+        this.actoresPreferidos = listaVacia;
+        this.vinculosAsociados = listaVacia;
+        this.disponibleChat = disponibleChat;
+        this.listaPersonal = listaPersonal;
+    }
+
     public PerfilDTO() {
     }
 
-    public ObjectId getPerfilId() {
+    public String getPerfilId() {
         return perfilId;
     }
 
-    public void setPerfilId(ObjectId perfilId) {
+    public void setPerfilId(String perfilId) {
         this.perfilId = perfilId;
     }
 
-    public ElementoDTO getVistoUltimamente() {
+    public String getVistoUltimamente() {
         return vistoUltimamente;
     }
 
-    public void setVistoUltimamente(ElementoDTO vistoUltimamente) {
+    public void setVistoUltimamente(String vistoUltimamente) {
         this.vistoUltimamente = vistoUltimamente;
     }
 

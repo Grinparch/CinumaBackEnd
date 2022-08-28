@@ -14,4 +14,6 @@ import tfg.Cinuma.Modelo.ListaPersonal;
  */
 public interface ElementoRepository extends MongoRepository<Elemento, String>{
     
+    void deleteElementoByElementoId(String elementoId);
+    
 }

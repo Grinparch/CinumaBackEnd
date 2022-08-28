@@ -15,17 +15,17 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "Grupo")
 public class Grupo {
     @Id
-    private ObjectId grupoId;
+    private String grupoId;
     private String nombre;
-    private Elemento[] elementosPreferidos;
+    private String[] elementosPreferidos;
     private String[][] elementosSinAprobar;
-    private String miembros;
+    private String[] miembros;
     private String descripcion;
 
     public Grupo() {
     }
 
-    public Grupo(ObjectId grupoId, String nombre, Elemento[] elementosPreferidos, String[][] elementosSinAprobar, String miembros, String descripcion) {
+    public Grupo(String grupoId, String nombre, String[] elementosPreferidos, String[][] elementosSinAprobar, String[] miembros, String descripcion) {
         this.grupoId = grupoId;
         this.nombre = nombre;
         this.elementosPreferidos = elementosPreferidos;
@@ -34,7 +34,7 @@ public class Grupo {
         this.descripcion = descripcion;
     }
 
-    public Grupo(ObjectId grupoId, String nombre, Elemento[] elementosPreferidos, String miembros, String descripcion) {
+    public Grupo(String grupoId, String nombre, String[] elementosPreferidos, String[] miembros, String descripcion) {
         this.grupoId = grupoId;
         this.nombre = nombre;
         this.elementosPreferidos = elementosPreferidos;
@@ -42,11 +42,11 @@ public class Grupo {
         this.descripcion = descripcion;
     }
 
-    public ObjectId getGrupoId() {
+    public String getGrupoId() {
         return grupoId;
     }
 
-    public void setGrupoId(ObjectId grupoId) {
+    public void setGrupoId(String grupoId) {
         this.grupoId = grupoId;
     }
 
@@ -58,11 +58,11 @@ public class Grupo {
         this.nombre = nombre;
     }
 
-    public Elemento[] getElementosPreferidos() {
+    public String[] getElementosPreferidos() {
         return elementosPreferidos;
     }
 
-    public void setElementosPreferidos(Elemento[] elementosPreferidos) {
+    public void setElementosPreferidos(String[] elementosPreferidos) {
         this.elementosPreferidos = elementosPreferidos;
     }
 
@@ -74,11 +74,11 @@ public class Grupo {
         this.elementosSinAprobar = elementosSinAprobar;
     }
 
-    public String getMiembros() {
+    public String[] getMiembros() {
         return miembros;
     }
 
-    public void setMiembros(String miembros) {
+    public void setMiembros(String[] miembros) {
         this.miembros = miembros;
     }
 
