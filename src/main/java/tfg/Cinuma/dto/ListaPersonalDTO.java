@@ -11,12 +11,12 @@ package tfg.Cinuma.dto;
  */
 public class ListaPersonalDTO {
     private String listaPersonalId;
-    ElementoDTO[] elementosVistos;
+    ElementoEnlistadoDTO[] elementosVistos;
 
     public ListaPersonalDTO() {
     }
 
-    public ListaPersonalDTO(String listaPersonalId, ElementoDTO[] elementosVistos) {
+    public ListaPersonalDTO(String listaPersonalId, ElementoEnlistadoDTO[] elementosVistos) {
         this.listaPersonalId = listaPersonalId;
         this.elementosVistos = elementosVistos;
     }
@@ -29,11 +29,11 @@ public class ListaPersonalDTO {
         this.listaPersonalId = listaPersonalId;
     }
 
-    public ElementoDTO[] getElementosVistos() {
+    public ElementoEnlistadoDTO[] getElementosVistos() {
         return elementosVistos;
     }
 
-    public void setElementosVistos(ElementoDTO[] elementosVistos) {
+    public void setElementosVistos(ElementoEnlistadoDTO[] elementosVistos) {
         this.elementosVistos = elementosVistos;
     }
 }

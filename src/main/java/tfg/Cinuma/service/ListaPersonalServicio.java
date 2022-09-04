@@ -15,5 +15,7 @@ import tfg.Cinuma.Modelo.Perfil;
 public interface ListaPersonalServicio {
     List<ListaPersonal> findAll();
     
+    ListaPersonal findByListaPersonalId(String listaPersonalId);
+    
     ListaPersonal saveOrUpdateListaPersonal(ListaPersonal listaPersonal);
 }

@@ -36,5 +36,10 @@ public class ImplementacionElementoService implements ElementoServicio{
     public void deleteElementoByElementoId(String elementoId) {
         elementoRepository.deleteElementoByElementoId(elementoId);
     }
+
+    @Override
+    public Elemento findByElementoId(String elementoId) {
+        return elementoRepository.findByElementoId(elementoId);
+    }
     
 }

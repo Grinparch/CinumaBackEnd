@@ -11,6 +11,7 @@ package tfg.Cinuma.dto;
  */
 public class ListaDTO {
     private String listaId;
+    private String perfilId;
     private ElementoDTO[] elementos;
     private String creador;
     private Integer votos;
@@ -18,14 +19,16 @@ public class ListaDTO {
     public ListaDTO() {
     }
 
-    public ListaDTO(String listaId, ElementoDTO[] elementos, String creador) {
+    public ListaDTO(String listaId, String perfilId, ElementoDTO[] elementos, String creador) {
         this.listaId = listaId;
+        this.perfilId = perfilId;
         this.elementos = elementos;
         this.creador = creador;
     }
 
-    public ListaDTO(String listaId, ElementoDTO[] elementos, String creador, Integer votos) {
+    public ListaDTO(String listaId, String perfilId, ElementoDTO[] elementos, String creador, Integer votos) {
         this.listaId = listaId;
+        this.perfilId = perfilId;
         this.elementos = elementos;
         this.creador = creador;
         this.votos = votos;
@@ -61,5 +64,13 @@ public class ListaDTO {
 
     public void setVotos(Integer votos) {
         this.votos = votos;
+    }
+
+    public String getPerfilId() {
+        return perfilId;
+    }
+
+    public void setPerfilId(String perfilId) {
+        this.perfilId = perfilId;
     }
 }

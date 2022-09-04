@@ -16,4 +16,6 @@ public interface ElementoRepository extends MongoRepository<Elemento, String>{
     
     void deleteElementoByElementoId(String elementoId);
     
+    Elemento findByElementoId(String elementoId);
+    
 }

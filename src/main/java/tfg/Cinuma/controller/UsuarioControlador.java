@@ -62,10 +62,9 @@ public class UsuarioControlador {
         if(authExistente == null){
             Autenticacion auth = new Autenticacion(null,usuarioDTO.getUsername(),usuarioDTO.getAutenticacion().getClave());
             Autenticacion newAuth = autenticacionServicio.saveOrUpdateAutenticacion(ObjectMapperUtils.map(auth, Autenticacion.class));
-            Elemento elemento[]= new Elemento[10000];
-            ListaPersonal listaP = new ListaPersonal(null,elemento);
+            ListaPersonal listaP = new ListaPersonal();
             ListaPersonal newListaP = listaPersonalServicio.saveOrUpdateListaPersonal(ObjectMapperUtils.map(listaP, ListaPersonal.class));
-            Perfil perfil = new Perfil(null,false,newListaP);
+            Perfil perfil = new Perfil(null,false,newListaP.getListaPersonalId());
             Perfil newPerfil = perfilServicio.saveOrUpdatePerfil(ObjectMapperUtils.map(perfil, Perfil.class));            
             Usuario usuario = new Usuario(null,usuarioDTO.getUsername(),usuarioDTO.getEmail(),
                     usuarioDTO.getPhone(),2,newPerfil.getPerfilId(),newAuth);

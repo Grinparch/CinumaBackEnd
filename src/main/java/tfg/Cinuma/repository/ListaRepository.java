@@ -13,4 +13,7 @@ import tfg.Cinuma.Modelo.Lista;
  */
 public interface ListaRepository extends MongoRepository<Lista, String>{
     
+    void deleteListaByListaId(String listaId);
+    
+    Lista findByListaId(String listaId);
 }

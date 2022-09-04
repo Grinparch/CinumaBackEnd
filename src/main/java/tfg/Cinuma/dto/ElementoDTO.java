@@ -14,83 +14,75 @@ public class ElementoDTO {
     private String elementoId;
     private String titulo;
     private Float calificacionPromedio;
-    private Float calificacionPersonal;
     private Float duracion;
     private String[] genero;
     private String idioma;
     private String director;
     private String[] actores;
-    private String opinion;
     private Integer tipo; //0 es serie, 1 es pelicula
     private Integer capitulos;
     private Date estreno;
     private Date estrenoTaquilla;
 
-    public ElementoDTO(String elementoId, String titulo, Float calificacionPromedio, Float calificacionPersonal, 
-            Float duracion, String[] genero, String idioma, String director, String[] actores, String opinion, Integer tipo) {
+    public ElementoDTO(String elementoId, String titulo, Float calificacionPromedio,
+            Float duracion, String[] genero, String idioma, String director, String[] actores, Integer tipo) {
         this.elementoId = elementoId;
         this.titulo = titulo;
         this.calificacionPromedio = calificacionPromedio;
-        this.calificacionPersonal = calificacionPersonal;
         this.duracion = duracion;
         this.genero = genero;
         this.idioma = idioma;
         this.director = director;
         this.actores = actores;
-        this.opinion = opinion;
         this.tipo = tipo;
     }
 
     private ElementoDTO(String elementoId, String titulo, Float calificacionPromedio, 
-            Float calificacionPersonal, Float duracion, String[] genero, String idioma, 
-            String director, String[] actores, String opinion, Integer tipo,
+            Float duracion, String[] genero, String idioma, 
+            String director, String[] actores,  Integer tipo,
             Integer capitulos, Date estreno) {
         this.elementoId = elementoId;
         this.titulo = titulo;
         this.calificacionPromedio = calificacionPromedio;
-        this.calificacionPersonal = calificacionPersonal;
         this.duracion = duracion;
         this.genero = genero;
         this.idioma = idioma;
         this.director = director;
         this.actores = actores;
-        this.opinion = opinion;
         this.tipo = tipo;
         this.capitulos = capitulos;
         this.estreno = estreno;
     }
 
     private ElementoDTO(String elementoId, String titulo, Float calificacionPromedio, 
-            Float calificacionPersonal, Float duracion, String[] genero, String idioma, 
-            String director, String[] actores, String opinion, Integer tipo, Date estrenoTaquilla) {
+            Float duracion, String[] genero, String idioma, 
+            String director, String[] actores, Integer tipo, Date estrenoTaquilla) {
         this.elementoId = elementoId;
         this.titulo = titulo;
         this.calificacionPromedio = calificacionPromedio;
-        this.calificacionPersonal = calificacionPersonal;
         this.duracion = duracion;
         this.genero = genero;
         this.idioma = idioma;
         this.director = director;
         this.actores = actores;
-        this.opinion = opinion;
         this.tipo = tipo;
         this.estrenoTaquilla = estrenoTaquilla;
     }
     
     public ElementoDTO createPelicula(String elementoId, String titulo, Float calificacionPromedio, 
-            Float calificacionPersonal, Float duracion, String[] genero, String idioma, 
-            String director, String[] actores, String opinion, Integer tipo, Date estrenoTaquilla){
+            Float duracion, String[] genero, String idioma, 
+            String director, String[] actores, Integer tipo, Date estrenoTaquilla){
         
-        return new ElementoDTO(elementoId, titulo, calificacionPromedio, calificacionPersonal, duracion, 
-                genero, idioma, director, actores, opinion, tipo, estrenoTaquilla);
+        return new ElementoDTO(elementoId, titulo, calificacionPromedio, duracion, 
+                genero, idioma, director, actores, tipo, estrenoTaquilla);
     }
     
     public ElementoDTO createSerie(String elementoId, String titulo, Float calificacionPromedio, 
-            Float calificacionPersonal, Float duracion, String[] genero, String idioma, 
-            String director, String[] actores, String opinion, Integer tipo, Integer capitulos, Date estreno){
+            Float duracion, String[] genero, String idioma, 
+            String director, String[] actores, Integer tipo, Integer capitulos, Date estreno){
         
-        return new ElementoDTO(elementoId, titulo, calificacionPromedio, calificacionPersonal, duracion, 
-                genero, idioma, director, actores, opinion, tipo, capitulos, estreno);
+        return new ElementoDTO(elementoId, titulo, calificacionPromedio, duracion, 
+                genero, idioma, director, actores, tipo, capitulos, estreno);
     }
 
     public ElementoDTO() {
@@ -118,14 +110,6 @@ public class ElementoDTO {
 
     public void setCalificacionPromedio(Float calificacionPromedio) {
         this.calificacionPromedio = calificacionPromedio;
-    }
-
-    public Float getCalificacionPersonal() {
-        return calificacionPersonal;
-    }
-
-    public void setCalificacionPersonal(Float calificacionPersonal) {
-        this.calificacionPersonal = calificacionPersonal;
     }
 
     public Float getDuracion() {
@@ -166,14 +150,6 @@ public class ElementoDTO {
 
     public void setActores(String[] actores) {
         this.actores = actores;
-    }
-
-    public String getOpinion() {
-        return opinion;
-    }
-
-    public void setOpinion(String opinion) {
-        this.opinion = opinion;
     }
 
     public Integer getTipo() {

@@ -18,12 +18,12 @@ public class PerfilDTO {
     private String[] vinculosAsociados;
     private Boolean disponibleChat;
     private String avatar;
-    private ListaPersonalDTO listaPersonal;
-    private ListaDTO listasCreadas;
+    private String listaPersonalId;
+    private String[] listasCreadas;
 
     public PerfilDTO(String perfilId, String vistoUltimamente, String generoPreferido, Float puntuacionPromedio, 
             String[] actoresPreferidos, String[] vinculosAsociados, Boolean disponibleChat, String avatar, 
-            ListaPersonalDTO listaPersonal, ListaDTO listasCreadas) {
+            String listaPersonalId, String[] listasCreadas) {
         this.perfilId = perfilId;
         this.vistoUltimamente = vistoUltimamente;
         this.generoPreferido = generoPreferido;
@@ -32,17 +32,17 @@ public class PerfilDTO {
         this.vinculosAsociados = vinculosAsociados;
         this.disponibleChat = disponibleChat;
         this.avatar = avatar;
-        this.listaPersonal = listaPersonal;
+        this.listaPersonalId = listaPersonalId;
         this.listasCreadas = listasCreadas;
     }
 
-    public PerfilDTO(String perfilId, Boolean disponibleChat, ListaPersonalDTO listaPersonal) {
+    public PerfilDTO(String perfilId, Boolean disponibleChat, String listaPersonalId) {
         String[] listaVacia = new String[0];
         this.perfilId = perfilId;
         this.actoresPreferidos = listaVacia;
         this.vinculosAsociados = listaVacia;
         this.disponibleChat = disponibleChat;
-        this.listaPersonal = listaPersonal;
+        this.listaPersonalId = listaPersonalId;
     }
 
     public PerfilDTO() {
@@ -112,19 +112,19 @@ public class PerfilDTO {
         this.avatar = avatar;
     }
 
-    public ListaPersonalDTO getListaPersonal() {
-        return listaPersonal;
+    public String getListaPersonalId() {
+        return listaPersonalId;
     }
 
-    public void setListaPersonal(ListaPersonalDTO listaPersonal) {
-        this.listaPersonal = listaPersonal;
+    public void setListaPersonalId(String listaPersonalId) {
+        this.listaPersonalId = listaPersonalId;
     }
 
-    public ListaDTO getListasCreadas() {
+    public String[] getListasCreadas() {
         return listasCreadas;
     }
 
-    public void setListasCreadas(ListaDTO listasCreadas) {
+    public void setListasCreadas(String[] listasCreadas) {
         this.listasCreadas = listasCreadas;
     }
 }

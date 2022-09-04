@@ -12,5 +12,7 @@ import tfg.Cinuma.Modelo.ListaPersonal;
  * @author jsnie
  */
 public interface ListaPersonalRepository extends MongoRepository<ListaPersonal, String>{
+    ListaPersonal findByListaPersonalId(String listaPersonalId);
     
+    void deleteUsuarioByListaPersonalId(String listaPersonalId);
 }

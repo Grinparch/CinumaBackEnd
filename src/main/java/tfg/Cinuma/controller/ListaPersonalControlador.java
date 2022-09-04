@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -44,6 +45,11 @@ public class ListaPersonalControlador {
     public ResponseEntity<?> agregarListaPersonal(@RequestBody ListaPersonalDTO listaPersonalDTO) {
         listaPersonalServicio.saveOrUpdateListaPersonal(ObjectMapperUtils.map(listaPersonalDTO, ListaPersonal.class));
         return new ResponseEntity("Lista Personal agregada exitosamente", HttpStatus.OK);
+    }
+    
+    @GetMapping(value = "/{listaPersonalId}")
+    public ListaPersonalDTO obtenerListaPersonalPorId(@PathVariable("listaPersonalId") String listaPersonalId) {
+        return ObjectMapperUtils.map(listaPersonalServicio.findByListaPersonalId(listaPersonalId), ListaPersonalDTO.class);
     }
     
 }

@@ -16,5 +16,7 @@ public interface ElementoServicio {
     
     Elemento saveOrUpdateElemento(Elemento elemento);
     
+    Elemento findByElementoId(String elementoId);
+    
     void deleteElementoByElementoId(String elementoId);
 }

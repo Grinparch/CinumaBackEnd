@@ -16,12 +16,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class ListaPersonal {
     @Id
     private String listaPersonalId;
-    Elemento[] elementosVistos;
+    ElementoEnlistado[] elementosVistos;
 
     public ListaPersonal() {
     }
 
-    public ListaPersonal(String listaPersonalId, Elemento[] elementosVistos) {
+    public ListaPersonal(String listaPersonalId, ElementoEnlistado[] elementosVistos) {
         this.listaPersonalId = listaPersonalId;
         this.elementosVistos = elementosVistos;
     }
@@ -34,11 +34,11 @@ public class ListaPersonal {
         this.listaPersonalId = listaPersonalId;
     }
 
-    public Elemento[] getElementosVistos() {
+    public ElementoEnlistado[] getElementosVistos() {
         return elementosVistos;
     }
 
-    public void setElementosVistos(Elemento[] elementosVistos) {
+    public void setElementosVistos(ElementoEnlistado[] elementosVistos) {
         this.elementosVistos = elementosVistos;
     }
 

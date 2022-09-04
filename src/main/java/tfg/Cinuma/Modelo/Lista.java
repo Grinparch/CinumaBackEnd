@@ -16,6 +16,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Lista {
     @Id
     private String listaId;
+    private String perfilId;
     private Elemento[] elementos;
     private String creador;
     private Integer votos;
@@ -23,14 +24,16 @@ public class Lista {
     public Lista() {
     }
 
-    public Lista(String listaId, Elemento[] elementos, String creador) {
+    public Lista(String listaId, String perfilId, Elemento[] elementos, String creador) {
         this.listaId = listaId;
+        this.perfilId = perfilId;
         this.elementos = elementos;
         this.creador = creador;
     }
 
-    public Lista(String listaId, Elemento[] elementos, String creador, Integer votos) {
+    public Lista(String listaId, String perfilId, Elemento[] elementos, String creador, Integer votos) {
         this.listaId = listaId;
+        this.perfilId = perfilId;
         this.elementos = elementos;
         this.creador = creador;
         this.votos = votos;
@@ -66,6 +69,14 @@ public class Lista {
 
     public void setVotos(Integer votos) {
         this.votos = votos;
+    }
+
+    public String getPerfilId() {
+        return perfilId;
+    }
+
+    public void setPerfilId(String perfilId) {
+        this.perfilId = perfilId;
     }
 
     @Override

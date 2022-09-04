@@ -6,6 +6,8 @@ package tfg.Cinuma.controller;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -22,6 +24,7 @@ import tfg.Cinuma.dto.ElementoDTO;
 import tfg.Cinuma.dto.GrupoDTO;
 import tfg.Cinuma.service.ElementoServicio;
 import tfg.Cinuma.service.GrupoServicio;
+import tfg.Cinuma.service.ListaServicio;
 import tfg.Cinuma.util.ObjectMapperUtils;
 
 /**
@@ -34,17 +37,31 @@ public class ElementoControlador {
     
     @Autowired
     private ElementoServicio elementoServicio;
+    @Autowired
+    private ListaServicio listaServicio;
     
     @CrossOrigin(origins = "http://localhost:8100")
     @GetMapping(value = "/")
     public List<ElementoDTO> obtenerTodosLosElementos() {
         return ObjectMapperUtils.mapAll(elementoServicio.findAll(), ElementoDTO.class);
     }
+    /*
+    @CrossOrigin(origins = "http://localhost:8100")
+    @GetMapping(value = "/getElementosLista/{listaId}")
+    public List<ElementoDTO> obtenerTodosLosElementosDeLista(@PathVariable("listaId") String listaId) {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("eleme").is(false));
+        return ObjectMapperUtils.mapAll(elementoServicio.findAll(), ElementoDTO.class);
+    }
+    */
+    @GetMapping(value = "/{elementoId}")
+    public ElementoDTO obtenerElementoPorId(@PathVariable("elementoId") String elementoId) {
+        return ObjectMapperUtils.map(elementoServicio.findByElementoId(elementoId), ElementoDTO.class);
+    }
     
     @CrossOrigin(origins = "http://localhost:8100")
     @PostMapping(value = "/addPelicula")
     public ResponseEntity<?> agregarPelicula(@RequestBody ElementoDTO elementoDTO) {
-        System.out.println(elementoDTO.getEstrenoTaquilla());
         elementoServicio.saveOrUpdateElemento(ObjectMapperUtils.map(elementoDTO, Elemento.class));
         return new ResponseEntity("Pelicula agregada exitosamente", HttpStatus.OK);
     }

@@ -30,5 +30,10 @@ public class ImplementacionListaPersonalServicio implements ListaPersonalServici
     public ListaPersonal saveOrUpdateListaPersonal(ListaPersonal listaPersonal) {
         return listaPersonalRepository.save(listaPersonal);
     }
+
+    @Override
+    public ListaPersonal findByListaPersonalId(String listaPersonalId) {
+        return listaPersonalRepository.findByListaPersonalId(listaPersonalId);
+    }
     
 }

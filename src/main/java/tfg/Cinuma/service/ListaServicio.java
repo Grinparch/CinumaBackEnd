@@ -15,5 +15,9 @@ import tfg.Cinuma.Modelo.Perfil;
 public interface ListaServicio {
     List<Lista> findAll();
     
+    Lista findByListaId(String listaId);
+    
+    void deleteListaByListaId(String listaId);
+    
     Lista saveOrUpdateLista(Lista lista);
 }

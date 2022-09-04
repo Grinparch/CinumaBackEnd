@@ -19,64 +19,58 @@ public class Elemento {
     private String elementoId;
     private String titulo;
     private Float calificacionPromedio;
-    private Float calificacionPersonal;
     private Float duracion;
     private String[] genero;
     private String idioma;
     private String director;
     private String[] actores;
-    private String opinion;
     private Integer tipo; //0 es serie, 1 es pelicula
     private Integer capitulos;
     private Date estreno;
     private Date estrenoTaquilla;
 
-    public Elemento(String elementoId, String titulo, Float calificacionPromedio, Float calificacionPersonal, Float duracion, String[] genero, String idioma, String director, String[] actores, String opinion, Integer tipo) {
+    public Elemento(String elementoId, String titulo, Float calificacionPromedio, 
+            Float duracion, String[] genero, String idioma, String director, 
+            String[] actores, Integer tipo) {
         this.elementoId = elementoId;
         this.titulo = titulo;
         this.calificacionPromedio = calificacionPromedio;
-        this.calificacionPersonal = calificacionPersonal;
         this.duracion = duracion;
         this.genero = genero;
         this.idioma = idioma;
         this.director = director;
         this.actores = actores;
-        this.opinion = opinion;
         this.tipo = tipo;
     }
 
     private Elemento(String elementoId, String titulo, Float calificacionPromedio, 
-            Float calificacionPersonal, Float duracion, String[] genero, String idioma, 
-            String director, String[] actores, String opinion, Integer tipo,
+            Float duracion, String[] genero, String idioma, 
+            String director, String[] actores, Integer tipo,
             Integer capitulos, Date estreno) {
         this.elementoId = elementoId;
         this.titulo = titulo;
         this.calificacionPromedio = calificacionPromedio;
-        this.calificacionPersonal = calificacionPersonal;
         this.duracion = duracion;
         this.genero = genero;
         this.idioma = idioma;
         this.director = director;
         this.actores = actores;
-        this.opinion = opinion;
         this.tipo = tipo;
         this.capitulos = capitulos;
         this.estreno = estreno;
     }
 
     private Elemento(String elementoId, String titulo, Float calificacionPromedio, 
-            Float calificacionPersonal, Float duracion, String[] genero, String idioma, 
-            String director, String[] actores, String opinion, Integer tipo, Date estrenoTaquilla) {
+            Float duracion, String[] genero, String idioma, 
+            String director, String[] actores, Integer tipo, Date estrenoTaquilla) {
         this.elementoId = elementoId;
         this.titulo = titulo;
         this.calificacionPromedio = calificacionPromedio;
-        this.calificacionPersonal = calificacionPersonal;
         this.duracion = duracion;
         this.genero = genero;
         this.idioma = idioma;
         this.director = director;
         this.actores = actores;
-        this.opinion = opinion;
         this.tipo = tipo;
         this.estrenoTaquilla = estrenoTaquilla;
     }
@@ -85,16 +79,16 @@ public class Elemento {
             Float calificacionPersonal, Float duracion, String[] genero, String idioma, 
             String director, String[] actores, String opinion, Integer tipo, Date estrenoTaquilla){
         
-        return new Elemento(elementoId, titulo, calificacionPromedio, calificacionPersonal, duracion, 
-                genero, idioma, director, actores, opinion, tipo, estrenoTaquilla);
+        return new Elemento(elementoId, titulo, calificacionPromedio, duracion, 
+                genero, idioma, director, actores, tipo, estrenoTaquilla);
     }
     
     public Elemento createSerie(String elementoId, String titulo, Float calificacionPromedio, 
             Float calificacionPersonal, Float duracion, String[] genero, String idioma, 
-            String director, String[] actores, String opinion, Integer tipo, Integer capitulos, Date estreno){
+            String director, String[] actores, Integer tipo, Integer capitulos, Date estreno){
         
-        return new Elemento(elementoId, titulo, calificacionPromedio, calificacionPersonal, duracion, 
-                genero, idioma, director, actores, opinion, tipo, capitulos, estreno);
+        return new Elemento(elementoId, titulo, calificacionPromedio, duracion, 
+                genero, idioma, director, actores, tipo, capitulos, estreno);
     }
 
     public Elemento() {
@@ -122,14 +116,6 @@ public class Elemento {
 
     public void setCalificacionPromedio(Float calificacionPromedio) {
         this.calificacionPromedio = calificacionPromedio;
-    }
-
-    public Float getCalificacionPersonal() {
-        return calificacionPersonal;
-    }
-
-    public void setCalificacionPersonal(Float calificacionPersonal) {
-        this.calificacionPersonal = calificacionPersonal;
     }
 
     public Float getDuracion() {
@@ -172,14 +158,6 @@ public class Elemento {
         this.actores = actores;
     }
 
-    public String getOpinion() {
-        return opinion;
-    }
-
-    public void setOpinion(String opinion) {
-        this.opinion = opinion;
-    }
-
     public Integer getTipo() {
         return tipo;
     }
@@ -215,10 +193,9 @@ public class Elemento {
     @Override
     public String toString() {
         return "Elemento{" + "elementoId=" + elementoId + ", titulo=" + titulo + 
-                ", calificacionPromedio=" + calificacionPromedio + ", calificacionPersonal="
-                + calificacionPersonal + ", duracion=" + duracion + ", genero=" + genero 
+                ", calificacionPromedio=" + calificacionPromedio + ", duracion=" + duracion + ", genero=" + genero 
                 + ", idioma=" + idioma + ", director=" + director + ", actores=" + actores 
-                + ", opinion=" + opinion + ", tipo=" + tipo + '}';
+                + ", tipo=" + tipo + '}';
     }
     
 }

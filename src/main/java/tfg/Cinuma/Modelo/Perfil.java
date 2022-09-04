@@ -23,12 +23,12 @@ public class Perfil {
     private String[] vinculosAsociados;
     private Boolean disponibleChat;
     private String avatar;
-    private ListaPersonal listaPersonal;
-    private Lista listasCreadas;
+    private String listaPersonalId;
+    private String[] listasCreadas;
 
     public Perfil(String perfilId, String vistoUltimamente, String generoPreferido, Float puntuacionPromedio, 
             String[] actoresPreferidos, String[] vinculosAsociados, Boolean disponibleChat, String avatar, 
-            ListaPersonal listaPersonal, Lista listasCreadas) {
+            String listaPersonalId, String[] listasCreadas) {
         this.perfilId = perfilId;
         this.vistoUltimamente = vistoUltimamente;
         this.generoPreferido = generoPreferido;
@@ -37,17 +37,17 @@ public class Perfil {
         this.vinculosAsociados = vinculosAsociados;
         this.disponibleChat = disponibleChat;
         this.avatar = avatar;
-        this.listaPersonal = listaPersonal;
+        this.listaPersonalId = listaPersonalId;
         this.listasCreadas = listasCreadas;
     }
 
-    public Perfil(String perfilId, Boolean disponibleChat, ListaPersonal listaPersonal) {
+    public Perfil(String perfilId, Boolean disponibleChat, String listaPersonalId) {
         String[] listaVacia = new String[0];
         this.perfilId = perfilId;
         this.actoresPreferidos = listaVacia;
         this.vinculosAsociados = listaVacia;
         this.disponibleChat = disponibleChat;
-        this.listaPersonal = listaPersonal;
+        this.listaPersonalId = listaPersonalId;
     }
 
     public Perfil() {
@@ -117,19 +117,19 @@ public class Perfil {
         this.avatar = avatar;
     }
 
-    public ListaPersonal getListaPersonal() {
-        return listaPersonal;
+    public String getListaPersonalId() {
+        return listaPersonalId;
     }
 
-    public void setListaPersonal(ListaPersonal listaPersonal) {
-        this.listaPersonal = listaPersonal;
+    public void setListaPersonalId(String listaPersonalId) {
+        this.listaPersonalId = listaPersonalId;
     }
 
-    public Lista getListasCreadas() {
+    public String[] getListasCreadas() {
         return listasCreadas;
     }
 
-    public void setListasCreadas(Lista listasCreadas) {
+    public void setListasCreadas(String[] listasCreadas) {
         this.listasCreadas = listasCreadas;
     }
 
@@ -139,7 +139,7 @@ public class Perfil {
                 ", generoPreferido=" + generoPreferido + ", puntuacionPromedio=" + puntuacionPromedio 
                 + ", actoresPreferidos=" + actoresPreferidos + ", vinculosAsociados=" 
                 + vinculosAsociados + ", disponibleChat=" + disponibleChat + ", avatar=" 
-                + avatar + ", listaPersonal=" + listaPersonal + ", listasCreadas=" + listasCreadas + '}';
+                + avatar + ", listaPersonal=" + listaPersonalId + ", listasCreadas=" + listasCreadas + '}';
     }
 
     

@@ -30,5 +30,15 @@ public class ImplementacionListaServicio implements ListaServicio{
     public Lista saveOrUpdateLista(Lista lista) {
         return listaRepository.save(lista);
     }
+
+    @Override
+    public void deleteListaByListaId(String listaId) {
+        listaRepository.deleteListaByListaId(listaId);
+    }
+
+    @Override
+    public Lista findByListaId(String listaId) {
+        return listaRepository.findByListaId(listaId);
+    }
     
 }
