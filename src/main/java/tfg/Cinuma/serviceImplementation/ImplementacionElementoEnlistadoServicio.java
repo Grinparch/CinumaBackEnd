@@ -18,7 +18,7 @@ import tfg.Cinuma.service.ElementoEnlistadoServicio;
  * @author jsnie
  */
 @Service
-public class ImplementacionElementoEnlistadoService implements ElementoEnlistadoServicio{
+public class ImplementacionElementoEnlistadoServicio implements ElementoEnlistadoServicio{
     
     @Autowired
     private ElementoEnlistadoRepository elementoEnlistadoRepository;

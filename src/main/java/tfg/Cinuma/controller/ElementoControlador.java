@@ -22,6 +22,7 @@ import tfg.Cinuma.Modelo.Elemento;
 import tfg.Cinuma.Modelo.Grupo;
 import tfg.Cinuma.dto.ElementoDTO;
 import tfg.Cinuma.dto.GrupoDTO;
+import tfg.Cinuma.dto.ListaIDElementosDTO;
 import tfg.Cinuma.service.ElementoServicio;
 import tfg.Cinuma.service.GrupoServicio;
 import tfg.Cinuma.service.ListaServicio;
@@ -45,18 +46,22 @@ public class ElementoControlador {
     public List<ElementoDTO> obtenerTodosLosElementos() {
         return ObjectMapperUtils.mapAll(elementoServicio.findAll(), ElementoDTO.class);
     }
-    /*
-    @CrossOrigin(origins = "http://localhost:8100")
-    @GetMapping(value = "/getElementosLista/{listaId}")
-    public List<ElementoDTO> obtenerTodosLosElementosDeLista(@PathVariable("listaId") String listaId) {
-        Query query = new Query();
-        query.addCriteria(Criteria.where("eleme").is(false));
-        return ObjectMapperUtils.mapAll(elementoServicio.findAll(), ElementoDTO.class);
-    }
-    */
+    
     @GetMapping(value = "/{elementoId}")
     public ElementoDTO obtenerElementoPorId(@PathVariable("elementoId") String elementoId) {
         return ObjectMapperUtils.map(elementoServicio.findByElementoId(elementoId), ElementoDTO.class);
+    }
+    
+    @PostMapping(value = "/listaElementos")
+    public Elemento[] obtenerUsuariosPorUsername(@RequestBody ListaIDElementosDTO idElementosDTO) {
+        String[] listaIDElementos = idElementosDTO.getIdElementos();
+        Elemento[] listaElementos = new Elemento[listaIDElementos.length];
+        int i = 0;
+        for (String idElemento : listaIDElementos) {
+            listaElementos[i] = elementoServicio.findByElementoId(idElemento);
+            i++;
+        }
+        return listaElementos;
     }
     
     @CrossOrigin(origins = "http://localhost:8100")

@@ -40,5 +40,10 @@ public class ImplementacionUsuarioServicio implements UsuarioServicio{
     public void deleteUsuarioByUsername(String username) {
         usuarioRepositorio.deleteUsuarioByUsername(username);
     }
+
+    @Override
+    public Usuario findByUserId(String userId) {
+        return usuarioRepositorio.findByUserId(userId);
+    }
     
 }

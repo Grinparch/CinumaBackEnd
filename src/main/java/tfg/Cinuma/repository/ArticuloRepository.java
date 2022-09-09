@@ -6,12 +6,13 @@ package tfg.Cinuma.repository;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import tfg.Cinuma.Modelo.Articulo;
-import tfg.Cinuma.Modelo.Autenticacion;
 
 /**
  *
  * @author jsnie
  */
 public interface ArticuloRepository extends MongoRepository<Articulo, String>{
+    void deleteArticuloByArticuloId(String articuloId);
     
+    Articulo findByArticuloId(String articuloId);
 }

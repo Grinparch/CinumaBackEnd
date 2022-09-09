@@ -21,25 +21,28 @@ public class Grupo {
     private String[][] elementosSinAprobar;
     private String[] miembros;
     private String descripcion;
+    private String lider;
 
     public Grupo() {
     }
 
-    public Grupo(String grupoId, String nombre, String[] elementosPreferidos, String[][] elementosSinAprobar, String[] miembros, String descripcion) {
+    public Grupo(String grupoId, String nombre, String[] elementosPreferidos, String[][] elementosSinAprobar, String[] miembros, String descripcion, String lider) {
         this.grupoId = grupoId;
         this.nombre = nombre;
         this.elementosPreferidos = elementosPreferidos;
         this.elementosSinAprobar = elementosSinAprobar;
         this.miembros = miembros;
         this.descripcion = descripcion;
+        this.lider = lider;
     }
 
-    public Grupo(String grupoId, String nombre, String[] elementosPreferidos, String[] miembros, String descripcion) {
+    public Grupo(String grupoId, String nombre, String[] elementosPreferidos, String[] miembros, String descripcion, String lider) {
         this.grupoId = grupoId;
         this.nombre = nombre;
         this.elementosPreferidos = elementosPreferidos;
         this.miembros = miembros;
         this.descripcion = descripcion;
+        this.lider = lider;
     }
 
     public String getGrupoId() {
@@ -88,6 +91,14 @@ public class Grupo {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public String getLider() {
+        return lider;
+    }
+
+    public void setLider(String lider) {
+        this.lider = lider;
     }
 
     @Override

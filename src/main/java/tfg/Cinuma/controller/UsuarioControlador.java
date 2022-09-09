@@ -22,6 +22,7 @@ import tfg.Cinuma.Modelo.ListaPersonal;
 import tfg.Cinuma.Modelo.Perfil;
 import tfg.Cinuma.Modelo.Usuario;
 import tfg.Cinuma.dto.AutenticacionDTO;
+import tfg.Cinuma.dto.ListaIDUsuariosDTO;
 import tfg.Cinuma.dto.UsuarioDTO;
 import tfg.Cinuma.service.AutenticacionServicio;
 import tfg.Cinuma.service.ListaPersonalServicio;
@@ -54,6 +55,23 @@ public class UsuarioControlador {
     @GetMapping(value = "/byUsername/{username}")
     public UsuarioDTO obtenerUsuarioPorUsername(@PathVariable("username") String username) {
         return ObjectMapperUtils.map(usuarioServicio.findByUsername(username), UsuarioDTO.class);
+    }
+    
+    @GetMapping(value = "/byID/{userId}")
+    public UsuarioDTO obtenerUsuarioPorIdUsuario(@PathVariable("userId") String userId) {
+        return ObjectMapperUtils.map(usuarioServicio.findByUserId(userId), UsuarioDTO.class);
+    }
+    
+    @PostMapping(value = "/listaUsuarios")
+    public Usuario[] obtenerUsuariosDeGrupo(@RequestBody ListaIDUsuariosDTO idUsuariosDTO) {
+        String[] listaIDUsuarios = idUsuariosDTO.getIdUsuarios();
+        Usuario[] listaUsuarios = new Usuario[listaIDUsuarios.length];
+        int i = 0;
+        for (String idUsuario : listaIDUsuarios) {
+            listaUsuarios[i] = usuarioServicio.findByUserId(idUsuario);
+            i++;
+        }
+        return listaUsuarios;
     }
 
     @PostMapping(value = "/addUsuarioComun")

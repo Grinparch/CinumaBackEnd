@@ -13,5 +13,7 @@ import tfg.Cinuma.Modelo.ListaPersonal;
  * @author jsnie
  */
 public interface GrupoRepository extends MongoRepository<Grupo, String>{
+    Grupo findByGrupoId(String grupoId);
     
+    void deleteGrupoByGrupoId(String grupoId);
 }

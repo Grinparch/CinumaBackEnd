@@ -16,6 +16,8 @@ public interface UsuarioServicio {
     List<Usuario> findAll();
 
     Usuario findByUsername(String username);
+    
+    Usuario findByUserId(String userId);
 
     Usuario saveOrUpdateUsuario(Usuario usuario);
 

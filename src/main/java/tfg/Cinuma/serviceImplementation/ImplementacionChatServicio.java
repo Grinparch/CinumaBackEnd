@@ -7,29 +7,29 @@ package tfg.Cinuma.serviceImplementation;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import tfg.Cinuma.Modelo.Grupo;
-import tfg.Cinuma.repository.GrupoRepository;
-import tfg.Cinuma.repository.ListaPersonalRepository;
-import tfg.Cinuma.service.GrupoServicio;
+import tfg.Cinuma.Modelo.Chat;
+import tfg.Cinuma.repository.ChatRepository;
+import tfg.Cinuma.repository.ElementoRepository;
+import tfg.Cinuma.service.ChatServicio;
 
 /**
  *
  * @author jsnie
  */
 @Service
-public class ImplementacionGrupoService implements GrupoServicio{
+public class ImplementacionChatServicio implements ChatServicio{
     
     @Autowired
-    private GrupoRepository grupoRepository;
+    private ChatRepository chatRepository;
 
     @Override
-    public List<Grupo> findAll() {
-        return grupoRepository.findAll();
+    public List<Chat> findAll() {
+        return chatRepository.findAll();
     }
 
     @Override
-    public Grupo saveOrUpdateGrupo(Grupo grupo) {
-        return grupoRepository.save(grupo);
+    public Chat saveOrUpdateChat(Chat chat) {
+        return chatRepository.save(chat);
     }
     
 }

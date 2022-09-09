@@ -16,24 +16,35 @@ public class ArticuloDTO {
     private String titulo;
     private String contenido;
     private String tema;
+    private String autorId;
     private String autor;
     private Date fechaCreacion;
     private String[] generosAsociados;
-    private String[] titulosAsociados;
+    private String tituloAsociado;
 
     public ArticuloDTO() {
     }
 
     public ArticuloDTO(String articuloId, String titulo, String contenido, String tema, 
-            String autor, Date fechaCreacion, String[] generosAsociados, String[] titulosAsociados) {
+            String autorId, String autor, Date fechaCreacion, String[] generosAsociados, 
+            String tituloAsociado) {
         this.articuloId = articuloId;
         this.titulo = titulo;
         this.contenido = contenido;
         this.tema = tema;
+        this.autorId = autorId;
         this.autor = autor;
         this.fechaCreacion = fechaCreacion;
         this.generosAsociados = generosAsociados;
-        this.titulosAsociados = titulosAsociados;
+        this.tituloAsociado = tituloAsociado;
+    }
+
+    public String getArticuloId() {
+        return articuloId;
+    }
+
+    public void setArticuloId(String articuloId) {
+        this.articuloId = articuloId;
     }
 
     public String getTitulo() {
@@ -60,6 +71,14 @@ public class ArticuloDTO {
         this.tema = tema;
     }
 
+    public String getAutorId() {
+        return autorId;
+    }
+
+    public void setAutorId(String autorId) {
+        this.autorId = autorId;
+    }
+
     public String getAutor() {
         return autor;
     }
@@ -84,19 +103,11 @@ public class ArticuloDTO {
         this.generosAsociados = generosAsociados;
     }
 
-    public String[] getTitulosAsociados() {
-        return titulosAsociados;
+    public String getTituloAsociado() {
+        return tituloAsociado;
     }
 
-    public void setTitulosAsociados(String[] titulosAsociados) {
-        this.titulosAsociados = titulosAsociados;
-    }
-
-    public String getArticuloId() {
-        return articuloId;
-    }
-
-    public void setArticuloId(String articuloId) {
-        this.articuloId = articuloId;
+    public void setTituloAsociado(String tituloAsociado) {
+        this.tituloAsociado = tituloAsociado;
     }
 }

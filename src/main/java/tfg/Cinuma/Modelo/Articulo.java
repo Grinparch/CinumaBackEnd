@@ -5,7 +5,6 @@
 package tfg.Cinuma.Modelo;
 
 import java.util.Date;
-import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -20,24 +19,35 @@ public class Articulo {
     private String titulo;
     private String contenido;
     private String tema;
+    private String autorId;
     private String autor;
     private Date fechaCreacion;
     private String[] generosAsociados;
-    private ObjectId[] titulosAsociados;
+    private String tituloAsociado;
 
     public Articulo() {
     }
 
     public Articulo(String articuloId, String titulo, String contenido, String tema, 
-            String autor, Date fechaCreacion, String[] generosAsociados, ObjectId[] titulosAsociados) {
+            String autorId, String autor, Date fechaCreacion, String[] generosAsociados, 
+            String tituloAsociado) {
         this.articuloId = articuloId;
         this.titulo = titulo;
         this.contenido = contenido;
         this.tema = tema;
+        this.autorId = autorId;
         this.autor = autor;
         this.fechaCreacion = fechaCreacion;
         this.generosAsociados = generosAsociados;
-        this.titulosAsociados = titulosAsociados;
+        this.tituloAsociado = tituloAsociado;
+    }
+
+    public String getArticuloId() {
+        return articuloId;
+    }
+
+    public void setArticuloId(String articuloId) {
+        this.articuloId = articuloId;
     }
 
     public String getTitulo() {
@@ -64,6 +74,14 @@ public class Articulo {
         this.tema = tema;
     }
 
+    public String getAutorId() {
+        return autorId;
+    }
+
+    public void setAutorId(String autorId) {
+        this.autorId = autorId;
+    }
+
     public String getAutor() {
         return autor;
     }
@@ -88,27 +106,21 @@ public class Articulo {
         this.generosAsociados = generosAsociados;
     }
 
-    public ObjectId[] getTitulosAsociados() {
-        return titulosAsociados;
+    public String getTituloAsociado() {
+        return tituloAsociado;
     }
 
-    public void setTitulosAsociados(ObjectId[] titulosAsociados) {
-        this.titulosAsociados = titulosAsociados;
-    }
-
-    public String getArticuloId() {
-        return articuloId;
-    }
-
-    public void setArticuloId(String articuloId) {
-        this.articuloId = articuloId;
+    public void setTituloAsociado(String tituloAsociado) {
+        this.tituloAsociado = tituloAsociado;
     }
 
     @Override
     public String toString() {
-        return "Articulo{" + "titulo=" + titulo + ", contenido=" + contenido +
-                ", tema=" + tema + ", autor=" + autor + ", fechaCreacion=" + fechaCreacion 
-                + ", generosAsociados=" + generosAsociados + ", titulosAsociados=" + titulosAsociados + '}';
+        return "Articulo{" + "articuloId=" + articuloId + ", titulo=" + titulo +
+                ", contenido=" + contenido + ", tema=" + tema + ", autorId=" +
+                autorId + ", autor=" + autor + ", fechaCreacion=" + fechaCreacion 
+                + ", generosAsociados=" + generosAsociados + ", tituloAsociado=" 
+                + tituloAsociado + '}';
     }
     
     

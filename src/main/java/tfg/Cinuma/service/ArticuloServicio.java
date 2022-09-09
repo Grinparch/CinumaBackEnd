@@ -15,5 +15,9 @@ import tfg.Cinuma.Modelo.Autenticacion;
 public interface ArticuloServicio {
     List<Articulo> findAll();
     
+    Articulo findByArticuloId(String articuloId);
+    
     Articulo saveOrUpdateArticulo(Articulo articulo);
+    
+    void deleteArticuloByArticuloId(String articuloId);
 }

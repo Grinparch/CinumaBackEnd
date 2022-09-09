@@ -17,7 +17,7 @@ import tfg.Cinuma.service.ArticuloServicio;
  * @author jsnie
  */
 @Service
-public class ImplementacionArticuloService implements ArticuloServicio{
+public class ImplementacionArticuloServicio implements ArticuloServicio{
     
     @Autowired
     private ArticuloRepository articuloRepository;
@@ -30,6 +30,16 @@ public class ImplementacionArticuloService implements ArticuloServicio{
     @Override
     public Articulo saveOrUpdateArticulo(Articulo articulo) {
         return articuloRepository.save(articulo);
+    }
+
+    @Override
+    public void deleteArticuloByArticuloId(String articuloId) {
+        articuloRepository.deleteArticuloByArticuloId(articuloId);
+    }
+
+    @Override
+    public Articulo findByArticuloId(String articuloId) {
+        return articuloRepository.findByArticuloId(articuloId);
     }
     
 }

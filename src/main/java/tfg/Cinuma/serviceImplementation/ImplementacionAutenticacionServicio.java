@@ -17,7 +17,7 @@ import tfg.Cinuma.service.AutenticacionServicio;
  * @author jsnie
  */
 @Service
-public class ImplementacionAutenticacionService implements AutenticacionServicio{
+public class ImplementacionAutenticacionServicio implements AutenticacionServicio{
     
     @Autowired
     private AutenticacionRepository autenticacionRepository;

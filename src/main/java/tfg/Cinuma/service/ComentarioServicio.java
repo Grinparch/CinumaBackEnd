@@ -5,19 +5,18 @@
 package tfg.Cinuma.service;
 
 import java.util.List;
-import tfg.Cinuma.Modelo.Grupo;
-import tfg.Cinuma.Modelo.ListaPersonal;
+import tfg.Cinuma.Modelo.Comentario;
 
 /**
  *
  * @author jsnie
  */
-public interface GrupoServicio {
-    List<Grupo> findAll();
+public interface ComentarioServicio {
+    List<Comentario> findAll();
     
-    Grupo findByGrupoId(String grupoId);
+    List<Comentario> findAll(String articuloId);
     
-    void deleteGrupoByGrupoId(String grupoId);
+    Comentario saveOrUpdateComentario(Comentario comentario);
     
-    Grupo saveOrUpdateGrupo(Grupo grupo);
+    void deleteComentarioByArticuloId(String articuloId);
 }
