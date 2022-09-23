@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import tfg.Cinuma.Modelo.Mensaje;
 import tfg.Cinuma.dto.MensajeDTO;
+import tfg.Cinuma.dto.RespuestaOKDTO;
 import tfg.Cinuma.service.MensajeServicio;
 import tfg.Cinuma.service.UsuarioServicio;
 import tfg.Cinuma.util.ObjectMapperUtils;
@@ -53,14 +54,13 @@ public class MensajeControlador {
     public ResponseEntity<?> agregarMensaje(@RequestBody MensajeDTO mensajeDTO) {
         String receptorId = usuarioServicio.findByUsername(mensajeDTO.getReceptor()).getUserId();
         mensajeDTO.setReceptorId(receptorId);
-        mensajeServicio.saveOrUpdateMensaje(ObjectMapperUtils.map(mensajeDTO, Mensaje.class));
-        return new ResponseEntity("Mensaje agregado exitosamenta", HttpStatus.OK);
+        return new ResponseEntity(mensajeServicio.saveOrUpdateMensaje(ObjectMapperUtils.map(mensajeDTO, Mensaje.class)), HttpStatus.OK);
     }
     
     @CrossOrigin(origins = "http://localhost:8100")
     @DeleteMapping(value = "/delete/{mensajeId}")
     public ResponseEntity<?> deleteMensajeByMensajeId(@PathVariable String mensajeId) {
         mensajeServicio.deleteMensajeByMensajeId(mensajeId);
-        return new ResponseEntity("Mensaje borrado exitosamente", HttpStatus.OK);
+        return new ResponseEntity(new RespuestaOKDTO("Mensaje borrado exitosamente"), HttpStatus.OK);
     }
 }

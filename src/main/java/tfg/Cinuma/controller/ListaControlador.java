@@ -19,11 +19,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import tfg.Cinuma.Modelo.Lista;
-import tfg.Cinuma.Modelo.ListaPersonal;
 import tfg.Cinuma.Modelo.Perfil;
 import tfg.Cinuma.dto.ListaDTO;
-import tfg.Cinuma.dto.ListaPersonalDTO;
-import tfg.Cinuma.service.ListaPersonalServicio;
+import tfg.Cinuma.dto.RespuestaOKDTO;
 import tfg.Cinuma.service.ListaServicio;
 import tfg.Cinuma.service.PerfilServicio;
 import tfg.Cinuma.util.ObjectMapperUtils;
@@ -63,7 +61,7 @@ public class ListaControlador {
         String[] listaDeListasAAgregar= listaDeListas.toArray(new String[listaDeListas.size()]);
         perfil.setListasCreadas(listaDeListasAAgregar);
         perfilServicio.saveOrUpdatePerfil(perfil);
-        return new ResponseEntity("Elemento borrado exitosamente", HttpStatus.OK);
+        return new ResponseEntity(new RespuestaOKDTO("Elemento borrado exitosamente"), HttpStatus.OK);
     }
     
     @CrossOrigin(origins = "http://localhost:8100")
@@ -82,14 +80,13 @@ public class ListaControlador {
             perfil.setListasCreadas(listaListaIdAAgregar);
         }
         perfilServicio.saveOrUpdatePerfil(perfil);
-        return new ResponseEntity("Lista agregada exitosamente", HttpStatus.OK);
+        return new ResponseEntity(lista, HttpStatus.OK);
     }
     
     @CrossOrigin(origins = "http://localhost:8100")
     @PostMapping(value = "/editarLista")
     public ResponseEntity<?> editarLista(@RequestBody ListaDTO listaDTO) {
-        listaServicio.saveOrUpdateLista(ObjectMapperUtils.map(listaDTO, Lista.class));
-        return new ResponseEntity("Lista editada exitosamente", HttpStatus.OK);
+        return new ResponseEntity(listaServicio.saveOrUpdateLista(ObjectMapperUtils.map(listaDTO, Lista.class)), HttpStatus.OK);
     }
     
     private List buscarYEliminarElementoEnLista(List<String> listaDeListas, String listaIdAEliminar){

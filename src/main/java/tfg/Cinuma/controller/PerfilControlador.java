@@ -41,15 +41,13 @@ public class PerfilControlador {
     @CrossOrigin(origins = "http://localhost:8100")
     @PostMapping(value = "/add")
     public ResponseEntity<?> agregarPerfiles(@RequestBody PerfilDTO perfilDTO) {
-        perfilServicio.saveOrUpdatePerfil(ObjectMapperUtils.map(perfilDTO, Perfil.class));
-        return new ResponseEntity("Perfil agregado exitosamente", HttpStatus.OK);
+        return new ResponseEntity(perfilServicio.saveOrUpdatePerfil(ObjectMapperUtils.map(perfilDTO, Perfil.class)), HttpStatus.OK);
     }
     
     @CrossOrigin(origins = "http://localhost:8100")
     @PutMapping(value = "/update")
     public ResponseEntity<?> actualizarPerfiles(@RequestBody PerfilDTO perfilDTO) {
-        perfilServicio.saveOrUpdatePerfil(ObjectMapperUtils.map(perfilDTO, Perfil.class));
-        return new ResponseEntity("Perfil agregado exitosamente", HttpStatus.OK);
+        return new ResponseEntity(perfilServicio.saveOrUpdatePerfil(ObjectMapperUtils.map(perfilDTO, Perfil.class)), HttpStatus.OK);
     }
     
     @GetMapping(value = "/byPerfilId/{perfilId}")

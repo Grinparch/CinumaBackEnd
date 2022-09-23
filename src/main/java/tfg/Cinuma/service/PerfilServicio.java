@@ -17,4 +17,6 @@ public interface PerfilServicio {
     Perfil saveOrUpdatePerfil(Perfil perfil);
     
     Perfil findByPerfilId(String perfilId);
+    
+    void deletePerfilByPerfilId(String perfilId);
 }

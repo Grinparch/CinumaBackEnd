@@ -4,25 +4,27 @@
  */
 package tfg.Cinuma.dto;
 
+import java.util.List;
+
 /**
  *
  * @author jsnie
  */
 public class ListaIDElementosDTO {
-    private String idElementos[];
+    private List<String> idElementos;
 
-    public ListaIDElementosDTO(String[] idElementos) {
+    public ListaIDElementosDTO(List<String> idElementos) {
         this.idElementos = idElementos;
     }
 
     public ListaIDElementosDTO() {
     }
 
-    public String[] getIdElementos() {
+    public List<String> getIdElementos() {
         return idElementos;
     }
 
-    public void setIdElementos(String[] idElementos) {
+    public void setIdElementos(List<String> idElementos) {
         this.idElementos = idElementos;
     }
 }

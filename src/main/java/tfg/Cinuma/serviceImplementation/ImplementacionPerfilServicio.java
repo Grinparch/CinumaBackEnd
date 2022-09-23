@@ -36,5 +36,10 @@ public class ImplementacionPerfilServicio implements PerfilServicio{
     public Perfil findByPerfilId(String username) {
         return perfilRepository.findByPerfilId(username);
     }
+
+    @Override
+    public void deletePerfilByPerfilId(String perfilId) {
+        perfilRepository.deletePerfilByPerfilId(perfilId);
+    }
     
 }

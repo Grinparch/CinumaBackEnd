@@ -16,6 +16,8 @@ public interface ElementoEnlistadoServicio {
     
     List<ElementoEnlistado> findAll();
     
+    List<ElementoEnlistado> findAll(String elementoId);
+    
     ElementoEnlistado saveOrUpdateElementoEnlistado(ElementoEnlistado elementoEnlistadoId);
     
     ElementoEnlistado findByListaPersonalId(String listaPersonalId);

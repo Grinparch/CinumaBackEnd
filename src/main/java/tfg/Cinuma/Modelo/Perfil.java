@@ -4,6 +4,7 @@
  */
 package tfg.Cinuma.Modelo;
 
+import java.util.Arrays;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -16,38 +17,45 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Perfil {
     @Id
     private String perfilId;
+    private String usuarioId;
     private String vistoUltimamente;
     private String generoPreferido;
     private Float puntuacionPromedio;
     private String[] actoresPreferidos;
     private String[] vinculosAsociados;
-    private Boolean disponibleChat;
-    private String avatar;
     private String listaPersonalId;
     private String[] listasCreadas;
 
-    public Perfil(String perfilId, String vistoUltimamente, String generoPreferido, Float puntuacionPromedio, 
-            String[] actoresPreferidos, String[] vinculosAsociados, Boolean disponibleChat, String avatar, 
-            String listaPersonalId, String[] listasCreadas) {
+    public Perfil(String perfilId, String usuarioId, String vistoUltimamente, 
+            String generoPreferido, Float puntuacionPromedio, String[] actoresPreferidos, 
+            String[] vinculosAsociados, String listaPersonalId, String[] listasCreadas) {
         this.perfilId = perfilId;
+        this.usuarioId = usuarioId;
         this.vistoUltimamente = vistoUltimamente;
         this.generoPreferido = generoPreferido;
         this.puntuacionPromedio = puntuacionPromedio;
         this.actoresPreferidos = actoresPreferidos;
         this.vinculosAsociados = vinculosAsociados;
-        this.disponibleChat = disponibleChat;
-        this.avatar = avatar;
         this.listaPersonalId = listaPersonalId;
         this.listasCreadas = listasCreadas;
     }
 
-    public Perfil(String perfilId, Boolean disponibleChat, String listaPersonalId) {
+    public Perfil(String perfilId, String listaPersonalId) {
         String[] listaVacia = new String[0];
         this.perfilId = perfilId;
         this.actoresPreferidos = listaVacia;
         this.vinculosAsociados = listaVacia;
-        this.disponibleChat = disponibleChat;
         this.listaPersonalId = listaPersonalId;
+    }
+    
+
+    public Perfil(String perfilId, String listaPersonalId, String usuarioId) {
+        String[] listaVacia = new String[0];
+        this.perfilId = perfilId;
+        this.actoresPreferidos = listaVacia;
+        this.vinculosAsociados = listaVacia;
+        this.listaPersonalId = listaPersonalId;
+        this.usuarioId = usuarioId;
     }
 
     public Perfil() {
@@ -101,22 +109,6 @@ public class Perfil {
         this.vinculosAsociados = vinculosAsociados;
     }
 
-    public Boolean getDisponibleChat() {
-        return disponibleChat;
-    }
-
-    public void setDisponibleChat(Boolean disponibleChat) {
-        this.disponibleChat = disponibleChat;
-    }
-
-    public String getAvatar() {
-        return avatar;
-    }
-
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
-    }
-
     public String getListaPersonalId() {
         return listaPersonalId;
     }
@@ -133,13 +125,22 @@ public class Perfil {
         this.listasCreadas = listasCreadas;
     }
 
+    public String getUsuarioId() {
+        return usuarioId;
+    }
+
+    public void setUsuarioId(String usuarioId) {
+        this.usuarioId = usuarioId;
+    }
+    
+
     @Override
     public String toString() {
         return "Perfil{" + "perfilId=" + perfilId + ", vistoUltimamente=" + vistoUltimamente + 
                 ", generoPreferido=" + generoPreferido + ", puntuacionPromedio=" + puntuacionPromedio 
-                + ", actoresPreferidos=" + actoresPreferidos + ", vinculosAsociados=" 
-                + vinculosAsociados + ", disponibleChat=" + disponibleChat + ", avatar=" 
-                + avatar + ", listaPersonal=" + listaPersonalId + ", listasCreadas=" + listasCreadas + '}';
+                + ", actoresPreferidos=" + Arrays.toString(actoresPreferidos) + ", vinculosAsociados=" 
+                + Arrays.toString(vinculosAsociados) + ", listaPersonal=" +
+                listaPersonalId + ", listasCreadas=" + Arrays.toString(listasCreadas) + '}';
     }
 
     

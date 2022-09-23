@@ -115,10 +115,12 @@ public class Usuario {
         this.rol = rol;
     }
 
-
     @Override
     public String toString() {
-        return "Usuario{" + "userId=" + userId + ", username=" + username + ", email=" + email + ", phone=" + phone + '}';
+        return "Usuario{" + "userId=" + userId + ", username=" + username +
+                ", email=" + email + ", phone=" + phone  + '}';
     }
+
+
     
 }

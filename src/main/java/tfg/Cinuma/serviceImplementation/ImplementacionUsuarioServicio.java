@@ -45,5 +45,10 @@ public class ImplementacionUsuarioServicio implements UsuarioServicio{
     public Usuario findByUserId(String userId) {
         return usuarioRepositorio.findByUserId(userId);
     }
+
+    @Override
+    public Usuario findByPerfil(String perfil) {
+        return usuarioRepositorio.findByPerfil(perfil);
+    }
     
 }

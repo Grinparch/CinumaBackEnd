@@ -18,4 +18,6 @@ public interface ListaPersonalServicio {
     ListaPersonal findByListaPersonalId(String listaPersonalId);
     
     ListaPersonal saveOrUpdateListaPersonal(ListaPersonal listaPersonal);
+    
+    void deleteListaPersonalByListaPersonalId(String listaPersonalId);
 }

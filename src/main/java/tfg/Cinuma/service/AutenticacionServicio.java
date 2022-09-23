@@ -17,4 +17,6 @@ public interface AutenticacionServicio {
     Autenticacion findByUsuario(String usuario);
     
     Autenticacion saveOrUpdateAutenticacion(Autenticacion autenticacion);
+    
+    void deleteAutenticacionByAutenticacionId(String autenticacionId);
 }

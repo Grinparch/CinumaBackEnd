@@ -14,5 +14,7 @@ import tfg.Cinuma.Modelo.Perfil;
 public interface PerfilRepository extends MongoRepository<Perfil, String>{
     
     Perfil findByPerfilId(String perfilId);
+    
+    void deletePerfilByPerfilId(String perfilId);
 
 }

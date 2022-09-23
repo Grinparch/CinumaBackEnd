@@ -35,5 +35,10 @@ public class ImplementacionListaPersonalServicio implements ListaPersonalServici
     public ListaPersonal findByListaPersonalId(String listaPersonalId) {
         return listaPersonalRepository.findByListaPersonalId(listaPersonalId);
     }
+
+    @Override
+    public void deleteListaPersonalByListaPersonalId(String listaPersonalId) {
+       listaPersonalRepository.deleteListaPersonalByListaPersonalId(listaPersonalId);
+    }
     
 }

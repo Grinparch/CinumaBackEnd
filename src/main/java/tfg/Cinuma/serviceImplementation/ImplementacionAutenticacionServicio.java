@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tfg.Cinuma.Modelo.Autenticacion;
 import tfg.Cinuma.repository.AutenticacionRepository;
-import tfg.Cinuma.repository.ChatRepository;
 import tfg.Cinuma.service.AutenticacionServicio;
 
 /**
@@ -35,6 +34,11 @@ public class ImplementacionAutenticacionServicio implements AutenticacionServici
     @Override
     public Autenticacion findByUsuario(String usuario) {
         return autenticacionRepository.findByUsuario(usuario);
+    }
+
+    @Override
+    public void deleteAutenticacionByAutenticacionId(String autenticacionId) {
+        autenticacionRepository.deleteAutenticacionByAutenticacionId(autenticacionId);
     }
     
 }

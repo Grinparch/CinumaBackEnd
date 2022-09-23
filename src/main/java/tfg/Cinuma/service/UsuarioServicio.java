@@ -18,6 +18,8 @@ public interface UsuarioServicio {
     Usuario findByUsername(String username);
     
     Usuario findByUserId(String userId);
+    
+    Usuario findByPerfil(String perfil);
 
     Usuario saveOrUpdateUsuario(Usuario usuario);
 

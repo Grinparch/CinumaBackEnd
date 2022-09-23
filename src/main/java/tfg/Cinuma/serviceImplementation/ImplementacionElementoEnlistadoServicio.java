@@ -47,5 +47,10 @@ public class ImplementacionElementoEnlistadoServicio implements ElementoEnlistad
     public ElementoEnlistado findByElementoEnlistadoId(String elementoEnlistadoId) {
         return elementoEnlistadoRepository.findByElementoEnlistadoId(elementoEnlistadoId);
     }
+
+    @Override
+    public List<ElementoEnlistado> findAll(String elementoId) {
+        return elementoEnlistadoRepository.findAll(elementoId);
+    }
     
 }

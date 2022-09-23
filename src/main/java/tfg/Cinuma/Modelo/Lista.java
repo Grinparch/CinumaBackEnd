@@ -4,7 +4,6 @@
  */
 package tfg.Cinuma.Modelo;
 
-import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -19,7 +18,6 @@ public class Lista {
     private String perfilId;
     private Elemento[] elementos;
     private String creador;
-    private Integer votos;
 
     public Lista() {
     }
@@ -29,14 +27,6 @@ public class Lista {
         this.perfilId = perfilId;
         this.elementos = elementos;
         this.creador = creador;
-    }
-
-    public Lista(String listaId, String perfilId, Elemento[] elementos, String creador, Integer votos) {
-        this.listaId = listaId;
-        this.perfilId = perfilId;
-        this.elementos = elementos;
-        this.creador = creador;
-        this.votos = votos;
     }
 
     public String getListaId() {
@@ -63,14 +53,6 @@ public class Lista {
         this.creador = creador;
     }
 
-    public Integer getVotos() {
-        return votos;
-    }
-
-    public void setVotos(Integer votos) {
-        this.votos = votos;
-    }
-
     public String getPerfilId() {
         return perfilId;
     }
@@ -81,8 +63,7 @@ public class Lista {
 
     @Override
     public String toString() {
-        return "Lista{" + "elementos=" + elementos + ", creador=" + creador + 
-                ", votos=" + votos + '}';
+        return "Lista{" + "elementos=" + elementos + ", creador=" + creador +'}';
     }
     
     

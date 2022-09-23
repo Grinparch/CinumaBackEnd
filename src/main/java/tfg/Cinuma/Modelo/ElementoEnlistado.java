@@ -23,7 +23,6 @@ public class ElementoEnlistado {
     private Float  puntuacionPersonal;
     private String opinion;
     private String titulo;
-    private Float calificacionPromedio;
     private Float duracion;
     private String[] genero;
     private String idioma;
@@ -39,7 +38,7 @@ public class ElementoEnlistado {
     }
     
     private ElementoEnlistado(String elementoEnlistadoId,String listaPersonalId, String perfilId,
-            String elementoId, String titulo, Float calificacionPromedio, 
+            String elementoId, String titulo,
             Float duracion, String[] genero, String idioma, 
             String director, String[] actores, Integer tipo,
             Integer capitulos, Date estreno) {
@@ -48,7 +47,6 @@ public class ElementoEnlistado {
         this.perfilId = perfilId;
         this.elementoId = elementoId;
         this.titulo = titulo;
-        this.calificacionPromedio = calificacionPromedio;
         this.duracion = duracion;
         this.genero = genero;
         this.idioma = idioma;
@@ -60,7 +58,7 @@ public class ElementoEnlistado {
     }
 
     private ElementoEnlistado(String elementoEnlistadoId,String listaPersonalId, String perfilId,
-            String elementoId, String titulo, Float calificacionPromedio, 
+            String elementoId, String titulo,
             Float duracion, String[] genero, String idioma, 
             String director, String[] actores, Integer tipo, Date estrenoTaquilla) {
         this.elementoEnlistadoId = elementoEnlistadoId;
@@ -68,7 +66,6 @@ public class ElementoEnlistado {
         this.perfilId = perfilId;
         this.elementoId = elementoId;
         this.titulo = titulo;
-        this.calificacionPromedio = calificacionPromedio;
         this.duracion = duracion;
         this.genero = genero;
         this.idioma = idioma;
@@ -79,7 +76,7 @@ public class ElementoEnlistado {
     }
     
     private ElementoEnlistado(String elementoEnlistadoId,String listaPersonalId, String perfilId,
-            String elementoId, String titulo, Float calificacionPromedio, 
+            String elementoId, String titulo,
             Float duracion, String[] genero, String idioma, 
             String director, String[] actores, Integer tipo,
             Integer capitulos, Date estreno, String opinion) {
@@ -88,7 +85,6 @@ public class ElementoEnlistado {
         this.perfilId = perfilId;
         this.elementoId = elementoId;
         this.titulo = titulo;
-        this.calificacionPromedio = calificacionPromedio;
         this.duracion = duracion;
         this.genero = genero;
         this.idioma = idioma;
@@ -101,7 +97,7 @@ public class ElementoEnlistado {
     }
 
     private ElementoEnlistado(String elementoEnlistadoId,String listaPersonalId, String perfilId,
-            String elementoId, String titulo, Float calificacionPromedio, 
+            String elementoId, String titulo,
             Float duracion, String[] genero, String idioma, String opinion,
             String director, String[] actores, Integer tipo, Date estrenoTaquilla) {
         this.elementoEnlistadoId = elementoEnlistadoId;
@@ -109,7 +105,6 @@ public class ElementoEnlistado {
         this.perfilId = perfilId;
         this.elementoId = elementoId;
         this.titulo = titulo;
-        this.calificacionPromedio = calificacionPromedio;
         this.duracion = duracion;
         this.genero = genero;
         this.idioma = idioma;
@@ -121,7 +116,7 @@ public class ElementoEnlistado {
     }
     
     private ElementoEnlistado(String elementoEnlistadoId,String listaPersonalId, String perfilId,
-            String elementoId, String titulo, Float calificacionPromedio, 
+            String elementoId, String titulo,
             Float duracion, String[] genero, String idioma, 
             String director, String[] actores, Integer tipo,
             Integer capitulos, Date estreno, Float calificacion) {
@@ -130,7 +125,6 @@ public class ElementoEnlistado {
         this.perfilId = perfilId;
         this.elementoId = elementoId;
         this.titulo = titulo;
-        this.calificacionPromedio = calificacionPromedio;
         this.duracion = duracion;
         this.genero = genero;
         this.idioma = idioma;
@@ -143,7 +137,7 @@ public class ElementoEnlistado {
     }
 
     private ElementoEnlistado(String elementoEnlistadoId,String listaPersonalId, String perfilId,
-            String elementoId, String titulo, Float calificacionPromedio, 
+            String elementoId, String titulo,
             Float duracion, String[] genero, String idioma, Float calificacion,
             String director, String[] actores, Integer tipo, Date estrenoTaquilla) {
         this.elementoEnlistadoId = elementoEnlistadoId;
@@ -151,7 +145,6 @@ public class ElementoEnlistado {
         this.perfilId = perfilId;
         this.elementoId = elementoId;
         this.titulo = titulo;
-        this.calificacionPromedio = calificacionPromedio;
         this.duracion = duracion;
         this.genero = genero;
         this.idioma = idioma;
@@ -163,7 +156,7 @@ public class ElementoEnlistado {
     }
     
     private ElementoEnlistado(String elementoEnlistadoId,String listaPersonalId, String perfilId,
-            String elementoId, String titulo, Float calificacionPromedio, 
+            String elementoId, String titulo,
             Float duracion, String[] genero, String idioma, Float calificacion, String opinion,
             String director, String[] actores, Integer tipo,
             Integer capitulos, Date estreno) {
@@ -172,7 +165,6 @@ public class ElementoEnlistado {
         this.perfilId = perfilId;
         this.elementoId = elementoId;
         this.titulo = titulo;
-        this.calificacionPromedio = calificacionPromedio;
         this.duracion = duracion;
         this.genero = genero;
         this.idioma = idioma;
@@ -186,7 +178,7 @@ public class ElementoEnlistado {
     }
 
     private ElementoEnlistado(String elementoEnlistadoId,String listaPersonalId, String perfilId,
-            String elementoId, String titulo, Float calificacionPromedio, 
+            String elementoId, String titulo,
             Float duracion, String[] genero, String idioma,  Float calificacion, String opinion,
             String director, String[] actores, Integer tipo, Date estrenoTaquilla) {
         this.elementoEnlistadoId = elementoEnlistadoId;
@@ -194,7 +186,7 @@ public class ElementoEnlistado {
         this.perfilId = perfilId;
         this.elementoId = elementoId;
         this.titulo = titulo;
-        this.calificacionPromedio = calificacionPromedio;
+        
         this.duracion = duracion;
         this.genero = genero;
         this.idioma = idioma;
@@ -253,15 +245,7 @@ public class ElementoEnlistado {
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
-
-    public Float getCalificacionPromedio() {
-        return calificacionPromedio;
-    }
-
-    public void setCalificacionPromedio(Float calificacionPromedio) {
-        this.calificacionPromedio = calificacionPromedio;
-    }
-
+    
     public Float getDuracion() {
         return duracion;
     }
@@ -351,7 +335,6 @@ public class ElementoEnlistado {
         elementoEnlistado.setPuntuacionPersonal(elementoEnlistadoDTO.getPuntuacionPersonal());
         elementoEnlistado.setOpinion(elementoEnlistadoDTO.getOpinion());
         elementoEnlistado.setTitulo(elementoEnlistadoDTO.getTitulo());
-        elementoEnlistado.setCalificacionPromedio(elementoEnlistadoDTO.getCalificacionPromedio());
         elementoEnlistado.setDuracion(elementoEnlistadoDTO.getDuracion());
         elementoEnlistado.setGenero(elementoEnlistadoDTO.getGenero());
         elementoEnlistado.setIdioma(elementoEnlistadoDTO.getIdioma());
@@ -370,7 +353,7 @@ public class ElementoEnlistado {
         return "ElementoEnlistado{" + "elementoEnlistadoId=" + elementoEnlistadoId + 
                 ", elementoId=" + elementoId + ", listaPersonalId=" + listaPersonalId + 
                 ", puntuacionPersonal=" + puntuacionPersonal + ", opinion=" + opinion + 
-                ", titulo=" + titulo + ", calificacionPromedio=" + calificacionPromedio 
+                ", titulo=" + titulo
                 + ", duracion=" + duracion + ", genero=" + genero + ", idioma=" 
                 + idioma + ", director=" + director + ", actores=" + actores + 
                 ", tipo=" + tipo + ", capitulos=" + capitulos + ", estreno=" + estreno 

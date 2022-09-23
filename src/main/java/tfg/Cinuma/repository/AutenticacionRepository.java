@@ -14,4 +14,6 @@ import tfg.Cinuma.Modelo.ListaPersonal;
  */
 public interface AutenticacionRepository extends MongoRepository<Autenticacion, String>{
     Autenticacion findByUsuario(String usuario);
+    
+    void deleteAutenticacionByAutenticacionId(String autenticacionId);
 }

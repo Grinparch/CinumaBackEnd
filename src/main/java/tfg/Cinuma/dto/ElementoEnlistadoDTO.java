@@ -18,7 +18,6 @@ public class ElementoEnlistadoDTO {
     private Float  puntuacionPersonal;
     private String opinion;
     private String titulo;
-    private Float calificacionPromedio;
     private Float duracion;
     private String[] genero;
     private String idioma;
@@ -34,7 +33,7 @@ public class ElementoEnlistadoDTO {
     }
 
     private ElementoEnlistadoDTO(String elementoEnlistadoId,String listaPersonalId, String perfilId,
-            String elementoId, String titulo, Float calificacionPromedio, 
+            String elementoId, String titulo,
             Float duracion, String[] genero, String idioma, 
             String director, String[] actores, Integer tipo,
             Integer capitulos, Date estreno) {
@@ -43,7 +42,6 @@ public class ElementoEnlistadoDTO {
         this.perfilId = perfilId;
         this.elementoId = elementoId;
         this.titulo = titulo;
-        this.calificacionPromedio = calificacionPromedio;
         this.duracion = duracion;
         this.genero = genero;
         this.idioma = idioma;
@@ -55,7 +53,7 @@ public class ElementoEnlistadoDTO {
     }
 
     private ElementoEnlistadoDTO(String elementoEnlistadoId,String listaPersonalId, String perfilId,
-            String elementoId, String titulo, Float calificacionPromedio, 
+            String elementoId, String titulo,
             Float duracion, String[] genero, String idioma, 
             String director, String[] actores, Integer tipo, Date estrenoTaquilla) {
         this.elementoEnlistadoId = elementoEnlistadoId;
@@ -63,7 +61,6 @@ public class ElementoEnlistadoDTO {
         this.perfilId = perfilId;
         this.elementoId = elementoId;
         this.titulo = titulo;
-        this.calificacionPromedio = calificacionPromedio;
         this.duracion = duracion;
         this.genero = genero;
         this.idioma = idioma;
@@ -74,7 +71,7 @@ public class ElementoEnlistadoDTO {
     }
     
     private ElementoEnlistadoDTO(String elementoEnlistadoId,String listaPersonalId, String perfilId,
-            String elementoId, String titulo, Float calificacionPromedio, 
+            String elementoId, String titulo,
             Float duracion, String[] genero, String idioma, 
             String director, String[] actores, Integer tipo,
             Integer capitulos, Date estreno, String opinion) {
@@ -83,7 +80,6 @@ public class ElementoEnlistadoDTO {
         this.perfilId = perfilId;
         this.elementoId = elementoId;
         this.titulo = titulo;
-        this.calificacionPromedio = calificacionPromedio;
         this.duracion = duracion;
         this.genero = genero;
         this.idioma = idioma;
@@ -96,7 +92,7 @@ public class ElementoEnlistadoDTO {
     }
 
     private ElementoEnlistadoDTO(String elementoEnlistadoId,String listaPersonalId, String perfilId,
-            String elementoId, String titulo, Float calificacionPromedio, 
+            String elementoId, String titulo,
             Float duracion, String[] genero, String idioma, String opinion,
             String director, String[] actores, Integer tipo, Date estrenoTaquilla) {
         this.elementoEnlistadoId = elementoEnlistadoId;
@@ -104,7 +100,6 @@ public class ElementoEnlistadoDTO {
         this.perfilId = perfilId;
         this.elementoId = elementoId;
         this.titulo = titulo;
-        this.calificacionPromedio = calificacionPromedio;
         this.duracion = duracion;
         this.genero = genero;
         this.idioma = idioma;
@@ -116,7 +111,7 @@ public class ElementoEnlistadoDTO {
     }
     
     private ElementoEnlistadoDTO(String elementoEnlistadoId,String listaPersonalId, String perfilId,
-            String elementoId, String titulo, Float calificacionPromedio, 
+            String elementoId, String titulo,
             Float duracion, String[] genero, String idioma, 
             String director, String[] actores, Integer tipo,
             Integer capitulos, Date estreno, Float calificacion) {
@@ -125,7 +120,6 @@ public class ElementoEnlistadoDTO {
         this.perfilId = perfilId;
         this.elementoId = elementoId;
         this.titulo = titulo;
-        this.calificacionPromedio = calificacionPromedio;
         this.duracion = duracion;
         this.genero = genero;
         this.idioma = idioma;
@@ -138,7 +132,7 @@ public class ElementoEnlistadoDTO {
     }
 
     private ElementoEnlistadoDTO(String elementoEnlistadoId,String listaPersonalId, String perfilId,
-            String elementoId, String titulo, Float calificacionPromedio, 
+            String elementoId, String titulo,
             Float duracion, String[] genero, String idioma, Float calificacion,
             String director, String[] actores, Integer tipo, Date estrenoTaquilla) {
         this.elementoEnlistadoId = elementoEnlistadoId;
@@ -146,7 +140,6 @@ public class ElementoEnlistadoDTO {
         this.perfilId = perfilId;
         this.elementoId = elementoId;
         this.titulo = titulo;
-        this.calificacionPromedio = calificacionPromedio;
         this.duracion = duracion;
         this.genero = genero;
         this.idioma = idioma;
@@ -158,7 +151,7 @@ public class ElementoEnlistadoDTO {
     }
     
     private ElementoEnlistadoDTO(String elementoEnlistadoId,String listaPersonalId, String perfilId,
-            String elementoId, String titulo, Float calificacionPromedio, 
+            String elementoId, String titulo,
             Float duracion, String[] genero, String idioma, Float calificacion, String opinion,
             String director, String[] actores, Integer tipo,
             Integer capitulos, Date estreno) {
@@ -167,7 +160,6 @@ public class ElementoEnlistadoDTO {
         this.perfilId = perfilId;
         this.elementoId = elementoId;
         this.titulo = titulo;
-        this.calificacionPromedio = calificacionPromedio;
         this.duracion = duracion;
         this.genero = genero;
         this.idioma = idioma;
@@ -181,7 +173,7 @@ public class ElementoEnlistadoDTO {
     }
 
     private ElementoEnlistadoDTO(String elementoEnlistadoId,String listaPersonalId, String perfilId,
-            String elementoId, String titulo, Float calificacionPromedio, 
+            String elementoId, String titulo,
             Float duracion, String[] genero, String idioma,  Float calificacion, String opinion,
             String director, String[] actores, Integer tipo, Date estrenoTaquilla) {
         this.elementoEnlistadoId = elementoEnlistadoId;
@@ -189,7 +181,6 @@ public class ElementoEnlistadoDTO {
         this.perfilId = perfilId;
         this.elementoId = elementoId;
         this.titulo = titulo;
-        this.calificacionPromedio = calificacionPromedio;
         this.duracion = duracion;
         this.genero = genero;
         this.idioma = idioma;
@@ -247,14 +238,6 @@ public class ElementoEnlistadoDTO {
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
-    }
-
-    public Float getCalificacionPromedio() {
-        return calificacionPromedio;
-    }
-
-    public void setCalificacionPromedio(Float calificacionPromedio) {
-        this.calificacionPromedio = calificacionPromedio;
     }
 
     public Float getDuracion() {

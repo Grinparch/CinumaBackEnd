@@ -4,7 +4,6 @@
  */
 package tfg.Cinuma.Modelo;
 
-import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -18,22 +17,11 @@ public class Grupo {
     private String grupoId;
     private String nombre;
     private String[] elementosPreferidos;
-    private String[][] elementosSinAprobar;
     private String[] miembros;
     private String descripcion;
     private String lider;
 
     public Grupo() {
-    }
-
-    public Grupo(String grupoId, String nombre, String[] elementosPreferidos, String[][] elementosSinAprobar, String[] miembros, String descripcion, String lider) {
-        this.grupoId = grupoId;
-        this.nombre = nombre;
-        this.elementosPreferidos = elementosPreferidos;
-        this.elementosSinAprobar = elementosSinAprobar;
-        this.miembros = miembros;
-        this.descripcion = descripcion;
-        this.lider = lider;
     }
 
     public Grupo(String grupoId, String nombre, String[] elementosPreferidos, String[] miembros, String descripcion, String lider) {
@@ -69,14 +57,6 @@ public class Grupo {
         this.elementosPreferidos = elementosPreferidos;
     }
 
-    public String[][] getElementosSinAprobar() {
-        return elementosSinAprobar;
-    }
-
-    public void setElementosSinAprobar(String[][] elementosSinAprobar) {
-        this.elementosSinAprobar = elementosSinAprobar;
-    }
-
     public String[] getMiembros() {
         return miembros;
     }
@@ -104,8 +84,7 @@ public class Grupo {
     @Override
     public String toString() {
         return "Grupo{" + "nombre=" + nombre + ", elementosPreferidos=" + elementosPreferidos 
-                + ", elementosSinAprobar=" + elementosSinAprobar + ", miembros=" + miembros 
-                + ", descripcion=" + descripcion + '}';
+                + ", miembros=" + miembros + ", descripcion=" + descripcion + '}';
     }
     
     

@@ -16,11 +16,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import tfg.Cinuma.Modelo.ListaPersonal;
-import tfg.Cinuma.Modelo.Perfil;
 import tfg.Cinuma.dto.ListaPersonalDTO;
-import tfg.Cinuma.dto.PerfilDTO;
 import tfg.Cinuma.service.ListaPersonalServicio;
-import tfg.Cinuma.service.PerfilServicio;
 import tfg.Cinuma.util.ObjectMapperUtils;
 
 /**
@@ -43,8 +40,7 @@ public class ListaPersonalControlador {
     @CrossOrigin(origins = "http://localhost:8100")
     @PostMapping(value = "/add")
     public ResponseEntity<?> agregarListaPersonal(@RequestBody ListaPersonalDTO listaPersonalDTO) {
-        listaPersonalServicio.saveOrUpdateListaPersonal(ObjectMapperUtils.map(listaPersonalDTO, ListaPersonal.class));
-        return new ResponseEntity("Lista Personal agregada exitosamente", HttpStatus.OK);
+        return new ResponseEntity( listaPersonalServicio.saveOrUpdateListaPersonal(ObjectMapperUtils.map(listaPersonalDTO, ListaPersonal.class)), HttpStatus.OK);
     }
     
     @GetMapping(value = "/{listaPersonalId}")
