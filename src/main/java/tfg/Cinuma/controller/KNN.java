@@ -38,7 +38,7 @@ public class KNN {
         
         for (int m = 0; m < listaPuntuacion.size();m++) {
             for (int n = 0; n < listaPuntuacion.size();n++) {
-                if(n+1<listaPuntuacion.size()-1){
+                if(n+1<=listaPuntuacion.size()-1){
                     if(listaPuntuacion.get(n)<listaPuntuacion.get(n+1)){
                         tempPunt = listaPuntuacion.get(n);
                         tempPer  = listaAOrdenar.get(n);
