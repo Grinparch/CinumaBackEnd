@@ -72,6 +72,18 @@ public class UsuarioControlador {
     public UsuarioDTO obtenerUsuarioPorIdUsuario(@PathVariable("userId") String userId) {
         return ObjectMapperUtils.map(usuarioServicio.findByUserId(userId), UsuarioDTO.class);
     }
+   
+    @GetMapping(value = "/verificacionUsername/{username}")
+    public Boolean verificarUsername(@PathVariable("username") String username) {
+        Usuario usuario = usuarioServicio.findByUsername(username);
+        Boolean respuesta;
+        if(usuario != null){
+            respuesta = true;
+        } else{
+            respuesta = false;
+        }
+        return respuesta;
+    }
     
     @GetMapping(value = "/recomendados/{perfilId}")
     public List<String> obtenerUsuariosRecomendadosDeUsuario(@PathVariable("perfilId") String perfilId) {
@@ -114,7 +126,7 @@ public class UsuarioControlador {
             perfilServicio.saveOrUpdatePerfil(perfil);
             return new ResponseEntity(newUsuario, HttpStatus.OK);
         }
-        return new ResponseEntity(new RespuestaOKDTO("Usuario no existente"), HttpStatus.BAD_REQUEST);
+        return new ResponseEntity(new RespuestaOKDTO("Usuario ya existente"), HttpStatus.OK);
     }
     
     @PostMapping(value = "/addUsuarioAvanzado")
@@ -134,7 +146,7 @@ public class UsuarioControlador {
             perfilServicio.saveOrUpdatePerfil(perfil);
             return new ResponseEntity(newUsuario, HttpStatus.OK);
         }
-        return new ResponseEntity(new RespuestaOKDTO("Usuario no existente"), HttpStatus.BAD_REQUEST);
+        return new ResponseEntity(new RespuestaOKDTO("Usuario ya existente"), HttpStatus.OK);
     }
 
     @DeleteMapping(value = "/delete/{username}")

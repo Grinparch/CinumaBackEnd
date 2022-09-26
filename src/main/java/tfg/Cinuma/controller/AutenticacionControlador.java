@@ -49,10 +49,10 @@ public class AutenticacionControlador {
                 usuarioExistente.getAutenticacion().setClave(null);
                 return new ResponseEntity(usuarioExistente, HttpStatus.OK);
             }else{
-                 return new ResponseEntity(new RespuestaOKDTO("Usuario y/o contraseña no validos"), HttpStatus.BAD_REQUEST);
+                 return new ResponseEntity(new RespuestaOKDTO("Usuario y/o contraseña no validos"), HttpStatus.OK);
             }
         }catch (Exception  e){
-             return new ResponseEntity(new RespuestaOKDTO("Usuario y/o contraseña no validos"), HttpStatus.BAD_REQUEST);
+             return new ResponseEntity(new RespuestaOKDTO("Usuario y/o contraseña no validos"), HttpStatus.OK);
         }
        
     }
@@ -64,7 +64,7 @@ public class AutenticacionControlador {
             Autenticacion newauth = autenticacionServicio.saveOrUpdateAutenticacion(ObjectMapperUtils.map(autenticacionDTO, Autenticacion.class));
             return new ResponseEntity(newauth, HttpStatus.OK);
         }else{
-            return new ResponseEntity("Usuario ya existe", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity("Usuario ya existe", HttpStatus.OK);
         }
     }
 }
